@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gatilho Financeiro | O Método 7 Dias</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis, renegocie dívidas e retome o controle financeiro.">
+    <meta name="keywords" content="finanças pessoais, organização financeira, sair das dívidas, controle financeiro, método 7 dias, gatilho financeiro">
+    <meta name="author" content="Gatilho Financeiro">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Gatilho Financeiro — Método 7 Dias">
+    <meta property="og:description" content="Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis e renegocie dívidas.">
+    <meta property="og:url" content="https://gatilhofinanceiro.netlify.app">
+    <meta property="og:site_name" content="Gatilho Financeiro">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gatilho Financeiro — Método 7 Dias">
+    <meta name="twitter:description" content="Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis e renegocie dívidas.">
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Gatilho Financeiro — Método 7 Dias",
+        "description": "Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis e renegocie dívidas.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Gatilho Financeiro"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "29.90",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
 
     <style>
         :root {
@@ -32,6 +75,20 @@
         h1, h2, h3, .btn { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* SKIP NAV (Acessibilidade) */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--primary);
+            color: #000;
+            padding: 10px 20px;
+            z-index: 9999;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .skip-nav:focus { top: 0; }
 
         /* HEADER */
         header {
@@ -97,17 +154,42 @@
             max-width: 600px;
         }
 
-        /* SVG VISUAL */
-        .visual-container {
+        /* VIDEO VSL */
+        .video-container {
             width: 100%;
             max-width: 800px;
-            height: 300px;
             margin-bottom: 40px;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: float 6s ease-in-out infinite;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+            border: 1px solid var(--border-glass);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 1rem;
         }
 
         /* GRID DE CARDS */
@@ -127,6 +209,131 @@
         }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
+
+        /* PARA QUEM É */
+        .target-audience {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-glass);
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .audience-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+        }
+        .audience-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 242, 255, 0.1);
+            border-radius: 8px;
+            color: var(--primary);
+        }
+        .audience-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* PROVA SOCIAL */
+        .social-proof {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, var(--bg-deep), #080a12);
+            border-top: 1px solid var(--border-glass);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .testimonial {
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            padding: 25px;
+            border-radius: 12px;
+            position: relative;
+        }
+        .testimonial::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            font-family: serif;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+        .testimonial p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-top: 20px;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .stars {
+            color: #fbbf24;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+        .social-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
 
         /* BÔNUS */
         .bonus {
@@ -149,9 +356,45 @@
             max-width: 400px;
         }
 
+        /* GARANTIA */
+        .guarantee-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-glass);
+        }
+        .guarantee-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(0, 242, 255, 0.05);
+            border: 2px solid rgba(0, 242, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+        }
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .guarantee-box h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .guarantee-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* CTA */
         .cta-section { text-align: center; padding: 100px 0; }
+        .price-old {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
         .btn {
+            display: inline-block;
             padding: 18px 50px;
             background: var(--primary);
             color: #000;
@@ -165,11 +408,59 @@
         }
         .btn:hover { background: #fff; box-shadow: 0 0 30px rgba(255,255,255,0.6); }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-glass);
         }
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .faq-question {
+            width: 100%;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover { color: var(--primary); }
+        .faq-arrow {
+            transition: transform 0.3s;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(0, 242, 255, 0.7); }
+        }
+
+        .btn-pulse { animation: pulse 2s ease-in-out infinite; }
 
         /* SEÇÃO DE CERTIFICAÇÃO / RODAPÉ */
         footer {
@@ -210,104 +501,78 @@
             line-height: 1.6;
         }
 
+        /* RESPONSIVE - Tablet */
+        @media (max-width: 1024px) {
+            .social-stats { gap: 30px; }
+        }
+
+        /* RESPONSIVE - Mobile */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .visual-container { height: 200px; }
+            .video-container { max-width: 100%; }
             .certifications { gap: 20px; }
+            .section-title { font-size: 1.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .audience-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .social-stats { gap: 25px; }
+            .stat-number { font-size: 1.5rem; }
+            .guarantee-box { padding: 25px; }
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 18px 30px;
+            }
+        }
+
+        /* RESPONSIVE - Telas muito pequenas */
+        @media (max-width: 480px) {
+            .hero { padding-top: 120px; padding-bottom: 60px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero p { font-size: 0.95rem; }
+            .badge { font-size: 0.7rem; }
+            .logo-text { font-size: 1.1rem; }
+            .card { padding: 20px; }
+            .card h3 { font-size: 1rem; }
+            .bonus-card { padding: 20px; }
+            .certifications { gap: 15px; }
+            .cert-item { font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Skip Navigation (Acessibilidade) -->
+    <a href="#conteudo-principal" class="skip-nav">Pular para o conteúdo principal</a>
+
     <header>
         <div class="container">
-            <nav>
+            <nav aria-label="Navegação principal">
                 <div class="logo-text">Gatilho <span>Financeiro</span></div>
             </nav>
         </div>
     </header>
 
+    <main id="conteudo-principal">
+
     <section class="hero container">
         <span class="badge">PROTOCOLO 7 DIAS</span>
-        
+
         <h1>DOMINE SEU FLUXO<br>ATIVE O <span style="color:var(--primary)">GATILHO</span></h1>
-        
+
         <p>O método simples para mapear seu dinheiro em 7 dias. Saiba exatamente para onde seu capital está indo.</p>
 
-        <!-- AQUI ESTÁ O VISUAL DO SEU ARQUIVO "MINIMALIST FINTECH" ATUALIZADO -->
-        <div class="visual-container">
-            <svg width="100%" height="100%" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#00F2FF;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-
-                <!-- Grade de Fundo para completar o visual -->
-                <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
-                    <line x1="0" y1="50" x2="800" y2="50"/>
-                    <line x1="0" y1="100" x2="800" y2="100"/>
-                    <line x1="0" y1="150" x2="800" y2="150"/>
-                    <line x1="0" y1="200" x2="800" y2="200"/>
-                    <line x1="0" y1="250" x2="800" y2="250"/>
-                    <line x1="100" y1="0" x2="100" y2="300"/>
-                    <line x1="300" y1="0" x2="300" y2="300"/>
-                    <line x1="500" y1="0" x2="500" y2="300"/>
-                    <line x1="700" y1="0" x2="700" y2="300"/>
-                </g>
-
-                <!-- Linha Principal Unificada: Batimento Cardíaco transicionando para Seta -->
-                <path d="M50 150 
-                         L80 150 L90 150 L110 220 L130 80 L150 230 L170 150 
-                         L300 150 
-                         C 400 150, 450 180, 550 100 
-                         S 620 60, 650 60" 
-                      fill="none" 
-                      stroke="url(#lineGradient)" 
-                      stroke-width="6" 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      filter="url(#neonGlow)"/>
-
-                <!-- Cabeça da Seta -->
-                <polygon points="650,60 620,80 630,95 660,85 665,75" 
-                         fill="#ffffff" 
-                         transform="rotate(35, 650, 60)" 
-                         filter="url(#neonGlow)"/>
-
-                <!-- Ponto de Início (Batimento) -->
-                <circle cx="50" cy="150" r="6" fill="#00F2FF" filter="url(#neonGlow)">
-                    <animate attributeName="r" values="6;9;6" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-                </circle>
-
-                <!-- Texto Centralizado -->
-                <text x="400" y="270" 
-                      font-family="'Orbitron', sans-serif" 
-                      font-size="38" 
-                      fill="#ffffff" 
-                      text-anchor="middle" 
-                      letter-spacing="5" 
-                      font-weight="bold" 
-                      style="text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);">
-                    GATILHO FINANCEIRO
-                </text>
-            </svg>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/LF5oJ0KXWZo?rel=0" title="Gatilho Financeiro — Vídeo de Apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <a href="#oferta" class="btn">ATIVAR AGORA</a>
+        <a href="https://pay.kiwify.com.br/3v7t3uT" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Ativar agora — ir para página de compra">ATIVAR AGORA</a>
     </section>
 
     <!-- CONTEÚDO -->
-    <section class="features container">
+    <section class="features container" aria-label="O que você vai aprender">
+        <h2 class="section-title">O QUE VOCÊ VAI APRENDER</h2>
+        <p class="section-subtitle">6 módulos práticos para transformar sua relação com o dinheiro em apenas 7 dias.</p>
         <div class="grid">
             <div class="card">
                 <h3>01. Mapeamento</h3>
@@ -336,10 +601,128 @@
         </div>
     </section>
 
-    <!-- BÔNUS -->
-    <section class="bonus">
+    <!-- PARA QUEM É -->
+    <section class="target-audience" aria-label="Para quem é este método">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px;">BÔNUS DE CONVERSÃO</h2>
+            <h2 class="section-title">PARA QUEM É ESSE MÉTODO?</h2>
+            <p class="section-subtitle">Se você se identifica com pelo menos uma dessas situações, o Gatilho Financeiro foi feito para você.</p>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Não sabe para onde vai o salário</strong> — O dinheiro entra e some, sem você entender exatamente como.</p>
+                    </div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Está endividado e não sabe por onde começar</strong> — Sente que as dívidas são uma bola de neve impossível de parar.</p>
+                    </div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Vive no cheque especial ou cartão de crédito</strong> — Usa crédito rotativo como se fosse parte do salário.</p>
+                    </div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Já tentou planilhas e aplicativos, mas desistiu</strong> — Precisa de algo simples, direto, que funcione em 7 dias.</p>
+                    </div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Quer organizar as finanças do casal ou da família</strong> — Precisa de um método que funcione para mais de uma pessoa.</p>
+                    </div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-icon" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    </div>
+                    <div>
+                        <p><strong>Ganha bem, mas nunca sobra nada</strong> — O problema não é a renda, é a falta de estratégia com o dinheiro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL -->
+    <section class="social-proof" aria-label="Depoimentos de alunos">
+        <div class="container">
+            <h2 class="section-title">O QUE DIZEM NOSSOS ALUNOS</h2>
+            <p class="section-subtitle">Pessoas reais que transformaram suas finanças com o método.</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>Em 4 dias eu já tinha cortado R$ 380 em assinaturas que nem lembrava que pagava. O método é simples e direto, sem enrolação.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RM</div>
+                        <div>
+                            <div class="testimonial-name">Renata M.</div>
+                            <div class="testimonial-role">Assistente Administrativa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>Eu e minha esposa fizemos juntos. Pela primeira vez conseguimos fechar o mês no positivo. Os scripts de renegociação são ouro puro.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CF</div>
+                        <div>
+                            <div class="testimonial-name">Carlos F.</div>
+                            <div class="testimonial-role">Motorista de App</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>Já tentei vários cursos caros e nenhum foi tão prático. Em 7 dias eu tinha um plano claro. Reduzi R$ 1.200 em dívidas no primeiro mês.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AP</div>
+                        <div>
+                            <div class="testimonial-name">Amanda P.</div>
+                            <div class="testimonial-role">Freelancer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2.500+</div>
+                    <div class="stat-label">Alunos ativos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.8/5</div>
+                    <div class="stat-label">Avaliação média</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Taxa de satisfação</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÔNUS -->
+    <section class="bonus" aria-label="Bônus inclusos">
+        <div class="container">
+            <h2 class="section-title">BÔNUS EXCLUSIVOS</h2>
+            <p class="section-subtitle">Além do método completo, você recebe ferramentas prontas para usar imediatamente.</p>
             <div class="bonus-grid">
                 <div class="bonus-card">
                     <h3>Planilha Automática</h3>
@@ -353,43 +736,119 @@
         </div>
     </section>
 
-    <!-- OFERTA -->
-    <section id="oferta" class="cta-section">
+    <!-- GARANTIA -->
+    <section class="guarantee-section" aria-label="Garantia de satisfação">
         <div class="container">
-            <h2 style="margin-bottom: 20px;">Acesso Completo</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">Método + Planilha + Scripts de Negociação</p>
-            
-            <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 30px; font-family: 'Orbitron';">
-                R$ 29,90
+            <div class="guarantee-box">
+                <div class="guarantee-icon" aria-hidden="true">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10" stroke="#fff" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>GARANTIA INCONDICIONAL DE 7 DIAS</h3>
+                <p>Se dentro de 7 dias você sentir que o método não é para você, basta enviar um e-mail e devolvemos 100% do seu investimento. Sem perguntas, sem burocracia. O risco é todo nosso. Essa é a nossa forma de mostrar que confiamos no Gatilho Financeiro — e você pode confiar também.</p>
             </div>
-
-            <a href="#" class="btn">COMPRAR AGORA</a>
         </div>
     </section>
+
+    <!-- OFERTA -->
+    <section id="oferta" class="cta-section" aria-label="Oferta de compra">
+        <div class="container">
+            <h2 style="margin-bottom: 10px;">Acesso Completo</h2>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Método + Planilha + Scripts de Negociação + Garantia de 7 dias</p>
+
+            <div class="price-old">De R$ 97,00</div>
+            <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 10px; font-family: 'Orbitron';">
+                R$ 29,90
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem;">Pagamento único — Acesso vitalício</p>
+
+            <a href="https://pay.kiwify.com.br/3v7t3uT" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 29,90">COMPRAR AGORA</a>
+            <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.8rem;">Aceitamos cartão, Pix e boleto</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" aria-label="Perguntas frequentes">
+        <div class="container">
+            <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+            <p class="section-subtitle">Tire suas dúvidas antes de ativar o seu Gatilho Financeiro.</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>O método funciona para quem ganha pouco?</span>
+                        <span class="faq-arrow" aria-hidden="true">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! O Gatilho Financeiro foi desenhado para qualquer faixa de renda. O foco é organizar o que você já tem, não exigir que ganhe mais. Muitos alunos com renda de 1 a 2 salários mínimos tiveram ótimos resultados.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso de algum conhecimento prévio?</span>
+                        <span class="faq-arrow" aria-hidden="true">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não. O método é 100% do zero. Você não precisa entender de finanças, investimentos ou planilhas. Tudo é explicado passo a passo, de forma simples e prática.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Como recebo o material?</span>
+                        <span class="faq-arrow" aria-hidden="true">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Imediatamente após a confirmação do pagamento, você recebe acesso por e-mail ao e-book em PDF, à planilha e aos scripts. Tudo digital, sem espera.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Posso compartilhar com minha família?</span>
+                        <span class="faq-arrow" aria-hidden="true">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! O método funciona muito bem para casais e famílias. Na verdade, é recomendado que vocês façam o mapeamento dos 7 dias juntos para ter uma visão completa das finanças da casa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>E se eu não gostar?</span>
+                        <span class="faq-arrow" aria-hidden="true">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Você tem 7 dias de garantia incondicional. Se não ficar satisfeito por qualquer motivo, basta enviar um e-mail e devolvemos 100% do valor. Sem perguntas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- RODAPÉ COM SELOS DE CERTIFICAÇÃO -->
     <footer>
         <div class="container">
-            
-            <!-- Ícones de Confiança -->
+
             <div class="certifications">
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                     </svg>
                     <span>Site Seguro</span>
                 </div>
-                
+
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                     </svg>
                     <span>Dados Protegidos</span>
                 </div>
 
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
@@ -397,7 +856,7 @@
                 </div>
 
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24">
+                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                         <line x1="1" y1="10" x2="23" y2="10"></line>
                     </svg>
@@ -406,11 +865,31 @@
             </div>
 
             <p class="footer-text">
-                © 2024 Gatilho Financeiro. Todos os direitos reservados.<br>
+                &copy; 2025 Gatilho Financeiro. Todos os direitos reservados.<br>
                 Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho não deve ser considerada média.
             </p>
         </div>
     </footer>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('active');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
