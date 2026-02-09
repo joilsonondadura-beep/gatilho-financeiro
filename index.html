@@ -154,7 +154,7 @@
             max-width: 600px;
         }
 
-        /* VIDEO WRAPPER - MÉTODO SIMPLIFICADO E FUNCIONAL */
+        /* VIDEO WRAPPER - COM CORREÇÃO IPHONE */
         .video-wrapper {
             width: 100%;
             max-width: 800px;
@@ -177,22 +177,22 @@
             width: 100%;
             height: 100%;
             border: 0;
-            pointer-events: none; /* <--- O SEGREDO: Bloqueia o mouse no YouTube */
         }
 
-        /* Overlay cobre o vídeo para receber o clique */
+        /* Overlay (Botão Principal Desktop) */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 10; /* Fica por cima do iframe */
+            z-index: 10;
             background: rgba(0,0,0,0);
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: opacity 0.5s;
         }
 
         .video-overlay::after {
@@ -207,13 +207,28 @@
             opacity: 0.9;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             border: 1px solid white;
-            transition: 0.3s;
         }
         .video-overlay:hover::after { transform: scale(1.05); }
 
-        .video-wrapper.active .video-overlay {
-            opacity: 0;
-            pointer-events: none; /* Desaparece depois do clique */
+        /* A MÁSCARA DO YOUTUBE NO PC (Esconde a barra de progresso) */
+        .youtube-controls-mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px; /* Altura aproximada da barra de controles */
+            background: #000;
+            z-index: 5;
+            pointer-events: none; /* Permite clicar para passar o mouse */
+            display: block; /* Mostra no PC */
+        }
+
+        /* CONFIGURAÇÃO MOBILE (iPhone) */
+        @media (max-width: 768px) {
+            .youtube-controls-mask { display: none !important; } /* Mostra a barra de controles nativa no celular */
+            .video-overlay { display: none !important; } /* Remove o botão customizado no celular (usa nativo) */
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 0.95rem; }
         }
 
         /* SECTION TITLES */
@@ -545,10 +560,9 @@
             .social-stats { gap: 30px; }
         }
 
-        /* RESPONSIVE - Mobile */
+        /* RESPONSIVE - Mobile (iPhone Fix) */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .video-wrapper { max-width: 100%; }
             .certifications { gap: 20px; }
             .section-title { font-size: 1.5rem; }
             .grid { grid-template-columns: 1fr; }
@@ -601,21 +615,25 @@
 
         <p>O método simples para mapear seu dinheiro em 7 dias. Saiba exatamente para onde seu capital está indo.</p>
 
-        <!-- VIDEO WRAPPER (SIMPLES, ROBUSTO E SEM ERROS) -->
+        <!-- VIDEO WRAPPER (MODO iPhone COMPATÍVEL) -->
         <div class="video-wrapper" id="videoWrapper">
-            <!-- Iframe Direto (Sem API complexa) -->
+            
+            <!-- Iframe com Controles Ativados (Necessário para funcionar no iPhone) -->
             <iframe id="yt-iframe"
-                src="https://www.youtube.com/embed/LF5oJ0KXWZo?rel=0&autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3" 
+                src="https://www.youtube.com/embed/LF5oJ0KXWZo?rel=0&autoplay=1&mute=1&controls=1&showinfo=0&modestbranding=1&iv_load_policy=3&playsinline=1" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
             </iframe>
 
-            <!-- Overlay com Z-Index alto para garantir clique -->
+            <!-- Div Preta para esconder a barra de controles no DESKTOP -->
+            <div class="youtube-controls-mask"></div>
+
+            <!-- Botão Overlay (Só aparece no Desktop) -->
             <div class="video-overlay" id="startOverlay" onclick="ativarSom()"></div>
+
         </div>
 
-        <!-- LINK ATUALIZADO -->
-        <a href="https://pay.kiwify.com.br/9xaksdk" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Ativar agora — ir para página de compra">ATIVAR AGORA</a>
+        <a href="https://pay.kiwify.com.br/9xaksdk" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Comprar agora — ir para página de compra">COMPRAR AGORA</a>
     </section>
 
     <!-- CONTEÚDO -->
@@ -813,7 +831,6 @@
             </div>
             <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem;">Pagamento único — Acesso vitalício</p>
 
-            <!-- LINK ATUALIZADO -->
             <a href="https://pay.kiwify.com.br/9xaksdk" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 29,90">COMPRAR AGORA</a>
             <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.8rem;">Aceitamos cartão, Pix e boleto</p>
         </div>
@@ -940,17 +957,26 @@
             });
         });
 
-        // SCRIPT SIMPLES E GARANTIDO (SEM API COMPLEXA)
+        // SCRIPT ATUALIZADO (COMPATÍVEL COM IPHONE)
         function ativarSom() {
             var iframe = document.getElementById('yt-iframe');
             var wrapper = document.getElementById('videoWrapper');
-            var currentSrc = iframe.src;
+            var overlay = document.getElementById('startOverlay');
 
-            // Troca apenas o parametro 'mute=1' por 'mute=0'
-            if (currentSrc.includes('mute=1')) {
-                var newSrc = currentSrc.replace('mute=1', 'mute=0');
-                iframe.src = newSrc;
-                wrapper.classList.add('active');
+            if (iframe) {
+                // Tenta usar API (Ideal) ou Reload (Fallback)
+                // No iPhone, a API do YouTube pode não carregar direito se o usuário não interagiu com o player.
+                // Como ativamos 'controls=1' no mobile, esse botão aqui é mais para PC.
+                
+                // Lógica simples: Tenta ligar som.
+                if (iframe.contentWindow) {
+                    // Tenta chamar função da API do player se disponível
+                    iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""},"*");
+                }
+                
+                // Esconde o overlay para revelar o vídeo
+                overlay.style.opacity = '0';
+                setTimeout(() => { overlay.style.display = 'none'; }, 500);
             }
         }
     </script>
