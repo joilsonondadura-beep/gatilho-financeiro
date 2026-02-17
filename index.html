@@ -2,27 +2,26 @@
 <html lang="pt-BR">
 <head>
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '930152846239162');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '930152846239162');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gatilho Financeiro | O Método 7 Dias</title>
-
-    <!-- build: 2026-02-12 -->
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis, renegocie dívidas e retome o controle financeiro.">
@@ -41,13 +40,13 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
     <meta name="twitter:title" content="Gatilho Financeiro — Método 7 Dias">
     <meta name="twitter:description" content="Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis e renegocie dívidas.">
 
-    <!-- Favicon (inline SVG) -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
 
-    <!-- Preconnect for Performance -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Schema Markup (JSON-LD) -->
     <script type="application/ld+json">
@@ -55,11 +54,8 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Gatilho Financeiro — Método 7 Dias",
-        "description": "Método prático de 7 dias para organizar suas finanças pessoais. Mapeie seu dinheiro, corte gastos invisíveis e renegocie dívidas.",
-        "brand": {
-            "@type": "Brand",
-            "name": "Gatilho Financeiro"
-        },
+        "description": "Método prático de 7 dias para organizar suas finanças pessoais.",
+        "brand": { "@type": "Brand", "name": "Gatilho Financeiro" },
         "offers": {
             "@type": "Offer",
             "price": "29.90",
@@ -70,533 +66,465 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
     </script>
 
     <style>
+        /* ============================================
+           DESIGN SYSTEM — Gatilho Financeiro v2.0
+           Mesmo padrão do app (app-theme.css)
+           ============================================ */
         :root {
-            --bg-deep: #050507;
-            --primary: #00F2FF;
-            --secondary: #7000ff;
-            --accent: #ffffff;
-            --text-main: #e0e6ed;
-            --text-muted: #94a3b8;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border-glass: rgba(255, 255, 255, 0.08);
+            --bg-deep: #0a0a0f;
+            --bg-surface: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #22223a;
+            --border: rgba(255,255,255,.06);
+            --border-hover: rgba(255,255,255,.12);
+            --accent: #6C5CE7;
+            --accent-glow: rgba(108,92,231,.35);
+            --accent-2: #00CFFD;
+            --accent-2-glow: rgba(0,207,253,.25);
+            --success: #00E676;
+            --danger: #FF5252;
+            --warning: #FFD740;
+            --text-primary: #F1F1F1;
+            --text-secondary: #A0A0B8;
+            --text-muted: #6c6c80;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --shadow-glow: 0 0 30px var(--accent-glow);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 20%);
+            line-height: 1.6;
         }
 
-        h1, h2, h3, .btn { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* SKIP NAV (Acessibilidade) */
+        /* ---- Skip nav (acessibilidade) ---- */
         .skip-nav {
-            position: absolute;
-            top: -100%;
-            left: 0;
-            background: var(--primary);
-            color: #000;
-            padding: 10px 20px;
-            z-index: 9999;
-            font-weight: 600;
-            text-decoration: none;
+            position: absolute; top: -100%; left: 0;
+            background: var(--accent); color: #fff;
+            padding: 10px 20px; z-index: 9999;
+            font-weight: 600; text-decoration: none;
+            border-radius: 0 0 var(--radius-sm) 0;
         }
         .skip-nav:focus { top: 0; }
 
-        /* HEADER */
-        header {
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(5, 5, 7, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-glass);
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-        .logo-text span { color: var(--primary); }
-
-        /* HERO SECTION */
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            min-height: 90vh;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(0, 242, 255, 0.1);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 30px;
-            border: 1px solid rgba(0, 242, 255, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 50px;
-            max-width: 600px;
-        }
-
-        /* VIDEO WRAPPER - COM CORREÇÃO IPHONE */
-        .video-wrapper {
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            background-color: #000;
-            border-radius: 12px;
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
-            border: 1px solid var(--border-glass);
+        /* ---- Background blobs ---- */
+        .bg-layer {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
             overflow: hidden;
         }
+        .bg-blob {
+            position: absolute; border-radius: 50%; filter: blur(120px);
+            opacity: .12; animation: blobFloat 20s ease-in-out infinite alternate;
+        }
+        .blob-1 { width: 600px; height: 600px; background: var(--accent); top: -10%; left: -5%; }
+        .blob-2 { width: 500px; height: 500px; background: var(--accent-2); bottom: -10%; right: -5%; animation-delay: -7s; }
+        .blob-3 { width: 400px; height: 400px; background: var(--success); top: 50%; left: 40%; animation-delay: -14s; opacity: .06; }
 
+        @keyframes blobFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+            100% { transform: translate(-20px, 20px) scale(.95); }
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+        /* ---- HEADER ---- */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(10,10,15,.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        header .container {
+            display: flex; justify-content: center; align-items: center;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: var(--radius-sm);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .logo-icon svg { width: 20px; height: 20px; color: #fff; }
+        .logo-text {
+            font-size: 1.25rem; font-weight: 700; color: var(--text-primary);
+        }
+        .logo-text span { color: var(--accent); }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding-top: 140px; padding-bottom: 80px;
+            text-align: center; min-height: 90vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(108,92,231,.12); color: var(--accent);
+            padding: 6px 16px; border-radius: 20px;
+            font-size: .8rem; font-weight: 600;
+            border: 1px solid rgba(108,92,231,.25);
+            margin-bottom: 28px; letter-spacing: .5px;
+        }
+        .badge svg { width: 14px; height: 14px; }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800; line-height: 1.1;
+            margin-bottom: 20px; letter-spacing: -.5px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.15rem; color: var(--text-secondary);
+            max-width: 600px; margin-bottom: 40px;
+        }
+
+        /* ---- VIDEO ---- */
+        .video-wrapper {
+            width: 100%; max-width: 800px;
+            position: relative; padding-bottom: 56.25%; height: 0;
+            background: var(--bg-card); border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden; margin-bottom: 40px;
+            box-shadow: 0 0 60px rgba(108,92,231,.15), 0 20px 60px rgba(0,0,0,.4);
+        }
         .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: 0;
         }
-
-        /* Overlay (Botão Principal Desktop) - AGORA É UM BUTTON REAL */
-        .video-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 20;
-            background: rgba(0,0,0,0);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.35s ease;
-            border: 0;
-            outline: none;
-
-            /* garante clique */
-            pointer-events: auto;
-        }
-
-        .video-overlay::after {
-            content: '🔊 CLIQUE PARA ATIVAR ÁUDIO';
-            color: white;
-            background: rgba(0, 242, 255, 0.85);
-            padding: 15px 25px;
-            border-radius: 30px;
-            font-weight: 800;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            opacity: 0.95;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.85);
-            transform: translateZ(0);
-        }
-        .video-overlay:hover::after { transform: scale(1.03); }
-
-        /* Máscara desktop para esconder a barra */
         .youtube-controls-mask {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: #000;
-            z-index: 5;
-            pointer-events: none;
-            display: block;
+            position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 60px;
+            background: linear-gradient(transparent, var(--bg-deep));
+            z-index: 5; pointer-events: none;
         }
+        .video-overlay {
+            position: absolute; inset: 0; z-index: 20;
+            background: rgba(0,0,0,.3); cursor: pointer;
+            display: flex; justify-content: center; align-items: center;
+            border: 0; outline: none; pointer-events: auto;
+            transition: opacity .35s;
+        }
+        .video-overlay-inner {
+            display: flex; align-items: center; gap: 10px;
+            background: var(--accent); color: #fff;
+            padding: 14px 28px; border-radius: 50px;
+            font-weight: 700; font-size: .95rem;
+            box-shadow: var(--shadow-glow);
+            transition: transform .2s;
+        }
+        .video-overlay:hover .video-overlay-inner { transform: scale(1.05); }
+        .video-overlay-inner svg { width: 20px; height: 20px; }
 
-        /* CONFIGURAÇÃO MOBILE (iPhone) */
         @media (max-width: 768px) {
             .youtube-controls-mask { display: none !important; }
             .video-overlay { display: none !important; }
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 0.95rem; }
         }
 
-        /* SECTION TITLES */
+        /* ---- CTA Button ---- */
+        .btn-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 48px;
+            background: linear-gradient(135deg, var(--accent), #8B5CF6);
+            color: #fff; text-decoration: none;
+            border-radius: 50px; font-weight: 700; font-size: 1.15rem;
+            letter-spacing: .5px;
+            box-shadow: var(--shadow-glow);
+            transition: all .3s; border: none; cursor: pointer;
+            animation: ctaPulse 2.5s ease-in-out infinite;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px var(--accent-glow), 0 10px 40px rgba(0,0,0,.3);
+        }
+        .btn-cta svg { width: 20px; height: 20px; }
+
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+            50% { box-shadow: 0 0 45px var(--accent-glow), 0 0 80px rgba(108,92,231,.15); }
+        }
+
+        .sub-cta {
+            margin-top: 14px; font-size: .85rem; color: var(--text-muted);
+        }
+        .sub-cta svg { width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; stroke: var(--success); }
+
+        /* ---- Section titles ---- */
+        .section { padding: 100px 0; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: .75rem; font-weight: 600;
+            color: var(--accent); letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 12px;
+        }
         .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 15px;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 800; margin-bottom: 12px;
+            letter-spacing: -.3px;
         }
         .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            font-size: 1rem;
+            color: var(--text-secondary); font-size: 1.05rem;
+            max-width: 600px; margin-bottom: 50px;
         }
+        .section-center { text-align: center; }
+        .section-center .section-subtitle { margin-left: auto; margin-right: auto; }
 
-        /* GRID DE CARDS */
-        .features { padding: 80px 0; }
-        .grid {
+        /* ---- Features Grid ---- */
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 24px;
         }
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--border-glass);
-            padding: 30px;
-            border-radius: 15px;
-            transition: 0.3s;
+        .feature-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 30px;
+            transition: all .3s;
         }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+        .feature-icon {
+            width: 48px; height: 48px;
+            background: rgba(108,92,231,.12);
+            border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .feature-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; }
+        .feature-card h3 {
+            font-size: 1.1rem; font-weight: 700;
+            margin-bottom: 8px; color: var(--text-primary);
+        }
+        .feature-card p { font-size: .93rem; color: var(--text-secondary); line-height: 1.6; }
 
-        /* PARA QUEM É */
-        .target-audience {
-            padding: 80px 0;
-            border-top: 1px solid var(--border-glass);
-        }
+        /* ---- Audience Section ---- */
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
         .audience-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 20px;
-            background: var(--glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 12px;
+            display: flex; align-items: flex-start; gap: 16px;
+            padding: 24px; background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: border-color .3s;
         }
-        .audience-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 242, 255, 0.1);
-            border-radius: 8px;
-            color: var(--primary);
+        .audience-item:hover { border-color: rgba(108,92,231,.3); }
+        .audience-dot {
+            width: 10px; height: 10px; flex-shrink: 0;
+            border-radius: 50%; background: var(--accent);
+            margin-top: 7px;
         }
-        .audience-item p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
+        .audience-item strong { color: var(--text-primary); }
+        .audience-item p { font-size: .93rem; color: var(--text-secondary); line-height: 1.6; }
 
-        /* PROVA SOCIAL */
-        .social-proof {
-            padding: 80px 0;
-            background: linear-gradient(to bottom, var(--bg-deep), #080a12);
-            border-top: 1px solid var(--border-glass);
-        }
+        /* ---- Testimonials ---- */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 24px; margin-bottom: 50px;
         }
         .testimonial {
-            background: var(--glass);
-            border: 1px solid var(--border-glass);
-            padding: 25px;
-            border-radius: 12px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 28px;
             position: relative;
         }
         .testimonial::before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--primary);
-            opacity: 0.3;
-            font-family: serif;
-            position: absolute;
-            top: 10px;
-            left: 15px;
+            content: '\201C'; font-size: 4rem;
+            color: var(--accent); opacity: .15;
+            font-family: Georgia, serif;
+            position: absolute; top: 8px; left: 18px;
+            line-height: 1;
         }
+        .stars { color: var(--warning); font-size: .9rem; margin-bottom: 10px; letter-spacing: 2px; }
         .testimonial p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 15px;
-            padding-top: 20px;
+            font-size: .93rem; color: var(--text-secondary); line-height: 1.7;
+            margin-bottom: 18px; padding-top: 10px;
         }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
         .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: #fff;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: .85rem; color: #fff;
         }
-        .testimonial-name {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #fff;
-        }
-        .testimonial-role {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .stars {
-            color: #fbbf24;
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
+        .testimonial-name { font-weight: 600; font-size: .9rem; }
+        .testimonial-role { font-size: .8rem; color: var(--text-muted); }
+
         .social-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 50px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
         }
         .stat-item { text-align: center; }
         .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 2.2rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-        }
+        .stat-label { font-size: .85rem; color: var(--text-muted); margin-top: 4px; }
 
-        /* BÔNUS */
-        .bonus {
-            background: linear-gradient(to bottom, var(--bg-deep), #0f111a);
-            padding: 80px 0;
-            border-top: 1px solid var(--border-glass);
-        }
+        /* ---- Bonus ---- */
         .bonus-grid {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
         }
         .bonus-card {
-            background: rgba(112, 0, 255, 0.1);
-            border: 1px solid var(--secondary);
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 400px;
+            background: rgba(108,92,231,.06);
+            border: 1px solid rgba(108,92,231,.2);
+            border-radius: var(--radius-lg); padding: 28px;
+            max-width: 400px; flex: 1; min-width: 280px;
+            transition: all .3s;
         }
+        .bonus-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-3px);
+        }
+        .bonus-tag {
+            display: inline-block;
+            background: var(--accent); color: #fff;
+            font-size: .7rem; font-weight: 700;
+            padding: 3px 10px; border-radius: 4px;
+            margin-bottom: 12px; letter-spacing: .5px;
+        }
+        .bonus-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .bonus-card p { font-size: .9rem; color: var(--text-secondary); line-height: 1.6; }
 
-        /* GARANTIA */
-        .guarantee-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border-glass);
-        }
+        /* ---- Guarantee ---- */
         .guarantee-box {
-            max-width: 700px;
-            margin: 0 auto;
-            background: rgba(0, 242, 255, 0.05);
-            border: 2px solid rgba(0, 242, 255, 0.2);
-            border-radius: 15px;
-            padding: 40px;
+            max-width: 700px; margin: 0 auto;
+            background: rgba(0,230,118,.04);
+            border: 2px solid rgba(0,230,118,.15);
+            border-radius: var(--radius-xl); padding: 48px;
             text-align: center;
         }
-        .guarantee-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+        .guarantee-icon { margin-bottom: 20px; }
+        .guarantee-icon svg { width: 64px; height: 64px; }
         .guarantee-box h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--success); margin-bottom: 16px;
         }
-        .guarantee-box p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
+        .guarantee-box p { color: var(--text-secondary); font-size: .95rem; line-height: 1.7; }
 
-        /* CTA */
-        .cta-section { text-align: center; padding: 100px 0; }
+        /* ---- CTA Final ---- */
+        .cta-final {
+            padding: 100px 0; text-align: center;
+        }
+        .price-box {
+            margin-bottom: 32px;
+        }
         .price-old {
-            font-size: 1.2rem;
-            color: var(--text-muted);
+            font-size: 1.1rem; color: var(--text-muted);
             text-decoration: line-through;
-            margin-bottom: 5px;
         }
-        .btn {
-            display: inline-block;
-            padding: 18px 50px;
-            background: var(--primary);
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
-            transition: 0.3s;
+        .price-current {
+            font-size: 3.5rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 8px 0;
         }
-        .btn:hover { background: #fff; box-shadow: 0 0 30px rgba(255,255,255,0.6); }
+        .price-note {
+            font-size: .9rem; color: var(--text-muted);
+        }
 
-        /* FAQ */
-        .faq-section {
-            padding: 80px 0;
-            border-top: 1px solid var(--border-glass);
-        }
-        .faq-list {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--border-glass);
-        }
+        /* ---- FAQ ---- */
+        .faq-list { max-width: 700px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
         .faq-question {
-            width: 100%;
-            padding: 20px 0;
-            background: none;
-            border: none;
-            color: #fff;
+            width: 100%; padding: 22px 0;
+            background: none; border: none;
+            color: var(--text-primary);
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: left;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 1rem; font-weight: 600;
+            text-align: left; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: color .2s;
         }
-        .faq-question:hover { color: var(--primary); }
+        .faq-question:hover { color: var(--accent); }
         .faq-arrow {
-            transition: transform 0.3s;
-            color: var(--primary);
-            font-size: 1.2rem;
+            transition: transform .3s; color: var(--accent);
+            font-size: 1.2rem; flex-shrink: 0; margin-left: 16px;
         }
         .faq-item.active .faq-arrow { transform: rotate(180deg); }
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+            max-height: 0; overflow: hidden;
+            transition: max-height .35s ease;
         }
         .faq-answer p {
-            padding-bottom: 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            padding-bottom: 22px; color: var(--text-secondary);
+            font-size: .93rem; line-height: 1.7;
         }
-        .faq-item.active .faq-answer { max-height: 220px; }
+        .faq-item.active .faq-answer { max-height: 250px; }
 
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
-            50% { box-shadow: 0 0 40px rgba(0, 242, 255, 0.7); }
-        }
-        .btn-pulse { animation: pulse 2s ease-in-out infinite; }
-
+        /* ---- Footer ---- */
         footer {
-            border-top: 1px solid var(--border-glass);
-            padding: 50px 0 30px 0;
-            text-align: center;
-            background: #020203;
+            border-top: 1px solid var(--border);
+            padding: 50px 0 30px; text-align: center;
+            background: rgba(5,5,7,.5);
         }
         .certifications {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 40px;
+            margin-bottom: 30px; flex-wrap: wrap;
         }
         .cert-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+            color: var(--text-muted); font-size: .85rem; font-weight: 500;
         }
-        .cert-icon {
-            width: 30px;
-            height: 30px;
-            stroke: var(--primary);
-            fill: none;
-            stroke-width: 2;
+        .cert-item svg {
+            width: 24px; height: 24px;
+            stroke: var(--accent); fill: none; stroke-width: 2;
         }
         .footer-text {
-            color: #4b5563;
-            font-size: 0.8rem;
-            line-height: 1.6;
+            color: var(--text-muted); font-size: .78rem; line-height: 1.7;
         }
 
+        /* ---- Divider ---- */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            max-width: 700px; margin: 0 auto;
+        }
+
+        /* ---- Responsive ---- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .certifications { gap: 20px; }
-            .section-title { font-size: 1.5rem; }
-            .grid { grid-template-columns: 1fr; }
+            .hero { padding-top: 120px; padding-bottom: 60px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .section { padding: 70px 0; }
+            .features-grid { grid-template-columns: 1fr; }
             .audience-grid { grid-template-columns: 1fr; }
             .testimonials-grid { grid-template-columns: 1fr; }
-            .social-stats { gap: 25px; }
-            .stat-number { font-size: 1.5rem; }
-            .guarantee-box { padding: 25px; }
-            .btn {
-                width: 100%;
-                text-align: center;
-                padding: 18px 30px;
-            }
+            .social-stats { gap: 30px; }
+            .btn-cta { width: 100%; justify-content: center; padding: 18px 30px; font-size: 1rem; }
+            .guarantee-box { padding: 30px 20px; }
+            .price-current { font-size: 2.8rem; }
+            .certifications { gap: 16px; }
         }
 
         @media (max-width: 480px) {
-            .hero { padding-top: 120px; padding-bottom: 60px; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero p { font-size: 0.95rem; }
-            .badge { font-size: 0.7rem; }
-            .logo-text { font-size: 1.1rem; }
-            .card { padding: 20px; }
-            .card h3 { font-size: 1rem; }
-            .bonus-card { padding: 20px; }
-            .certifications { gap: 15px; }
-            .cert-item { font-size: 0.8rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .badge { font-size: .72rem; }
+            .feature-card { padding: 22px; }
+            .bonus-card { padding: 22px; }
+            .stat-number { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -604,136 +532,184 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
 <body>
     <a href="#conteudo-principal" class="skip-nav">Pular para o conteúdo principal</a>
 
+    <!-- Background blobs -->
+    <div class="bg-layer" aria-hidden="true">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="container">
-            <nav aria-label="Navegação principal">
+            <a class="logo" href="#">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
                 <div class="logo-text">Gatilho <span>Financeiro</span></div>
-            </nav>
+            </a>
         </div>
     </header>
 
     <main id="conteudo-principal">
+
+        <!-- ==================== HERO ==================== -->
         <section class="hero container">
-            <span class="badge">PROTOCOLO 7 DIAS</span>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                PROTOCOLO 7 DIAS
+            </span>
 
-            <h1>DOMINE SEU FLUXO<br>ATIVE O <span style="color:var(--primary)">GATILHO</span></h1>
+            <h1>DOMINE SEU FLUXO.<br>ATIVE O <span class="highlight">GATILHO</span></h1>
 
-            <p>O método simples para mapear seu dinheiro em 7 dias. Saiba exatamente para onde seu capital está indo.</p>
+            <p>O método simples para mapear seu dinheiro em 7 dias. Saiba exatamente para onde seu capital está indo — e retome o controle.</p>
 
+            <!-- Video -->
             <div class="video-wrapper" id="videoWrapper">
-                <!-- ✅ enablejsapi=1 + postMessage funcionando no Chrome -->
                 <iframe
                     id="yt-iframe"
                     src="https://www.youtube.com/embed/LF5oJ0KXWZo?rel=0&autoplay=1&mute=1&controls=1&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    allowfullscreen
+                    loading="lazy">
                 </iframe>
-
                 <div class="youtube-controls-mask"></div>
-
-                <!-- ✅ Button real -->
-                <button class="video-overlay" id="startOverlay" type="button" onclick="ativarSom()" aria-label="Ativar áudio do vídeo"></button>
+                <button class="video-overlay" id="startOverlay" type="button" onclick="ativarSom()" aria-label="Ativar áudio do vídeo">
+                    <span class="video-overlay-inner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                        ATIVAR ÁUDIO
+                    </span>
+                </button>
             </div>
 
-            <a href="https://pay.kiwify.com.br/9xaksdk" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Comprar agora — ir para página de compra">COMPRAR AGORA</a>
+            <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" aria-label="Comprar agora">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                COMPRAR AGORA — R$ 29,90
+            </a>
+            <p class="sub-cta">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Garantia incondicional de 7 dias
+            </p>
         </section>
 
-        <section class="features container" aria-label="O que você vai aprender">
-            <h2 class="section-title">O QUE VOCÊ VAI APRENDER</h2>
-            <p class="section-subtitle">6 módulos práticos para transformar sua relação com o dinheiro em apenas 7 dias.</p>
-            <div class="grid">
-                <div class="card">
-                    <h3>01. Mapeamento</h3>
-                    <p>Regra dos 7 dias: Anote tudo sem julgamento. Entenda o fluxo real do seu capital.</p>
-                </div>
-                <div class="card">
-                    <h3>02. Corte Invisível</h3>
-                    <p>Identifique assinaturas parasitas e micro-gastos que sugam seu saldo mensalmente.</p>
-                </div>
-                <div class="card">
-                    <h3>03. Anti-Ansiedade</h3>
-                    <p>Plano psicológico para pagar o essencial + mínimo das dívidas e respirar fundo.</p>
-                </div>
-                <div class="card">
-                    <h3>04. Renegociação</h3>
-                    <p>Roteiros prontos para falar com bancos e reduzir juros usando scripts de alta conversão.</p>
-                </div>
-                <div class="card">
-                    <h3>05. Plano 30 Dias</h3>
-                    <p>Checklist diário de 1 página por dia para manter o controle absoluto.</p>
-                </div>
-                <div class="card">
-                    <h3>06. Categorias</h3>
-                    <p>Moradia, comida, dívida, lazer. Estrutura pronta para não perder tempo.</p>
-                </div>
-            </div>
-        </section>
+        <div class="section-divider"></div>
 
-        <section class="target-audience" aria-label="Para quem é este método">
+        <!-- ==================== O QUE VOCÊ VAI APRENDER ==================== -->
+        <section class="section section-center" aria-label="O que você vai aprender">
             <div class="container">
-                <h2 class="section-title">PARA QUEM É ESSE MÉTODO?</h2>
-                <p class="section-subtitle">Se você se identifica com pelo menos uma dessas situações, o Gatilho Financeiro foi feito para você.</p>
+                <span class="section-label">CONTEÚDO</span>
+                <h2 class="section-title">O que você vai aprender</h2>
+                <p class="section-subtitle">6 módulos práticos para transformar sua relação com o dinheiro em apenas 7 dias.</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <h3>01. Mapeamento</h3>
+                        <p>Regra dos 7 dias: anote tudo sem julgamento. Entenda o fluxo real do seu capital.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3>02. Corte Invisível</h3>
+                        <p>Identifique assinaturas parasitas e micro-gastos que sugam seu saldo mensalmente.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        </div>
+                        <h3>03. Anti-Ansiedade</h3>
+                        <p>Plano psicológico para pagar o essencial + mínimo das dívidas e respirar fundo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        </div>
+                        <h3>04. Renegociação</h3>
+                        <p>Roteiros prontos para falar com bancos e reduzir juros usando scripts de alta conversão.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                        </div>
+                        <h3>05. Plano 30 Dias</h3>
+                        <p>Checklist diário de 1 página por dia para manter o controle absoluto.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+                        </div>
+                        <h3>06. Categorias</h3>
+                        <p>Moradia, comida, dívida, lazer. Estrutura pronta para não perder tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== PARA QUEM É ==================== -->
+        <section class="section section-center" aria-label="Para quem é este método">
+            <div class="container">
+                <span class="section-label">PÚBLICO</span>
+                <h2 class="section-title">Para quem é esse método?</h2>
+                <p class="section-subtitle">Se você se identifica com pelo menos uma dessas situações, o Gatilho foi feito para você.</p>
+
                 <div class="audience-grid">
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
                             <p><strong>Não sabe para onde vai o salário</strong> — O dinheiro entra e some, sem você entender exatamente como.</p>
                         </div>
                     </div>
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
                             <p><strong>Está endividado e não sabe por onde começar</strong> — Sente que as dívidas são uma bola de neve impossível de parar.</p>
                         </div>
                     </div>
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
                             <p><strong>Vive no cheque especial ou cartão de crédito</strong> — Usa crédito rotativo como se fosse parte do salário.</p>
                         </div>
                     </div>
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
-                            <p><strong>Já tentou planilhas e aplicativos, mas desistiu</strong> — Precisa de algo simples, direto, que funcione em 7 dias.</p>
+                            <p><strong>Já tentou planilhas e apps, mas desistiu</strong> — Precisa de algo simples, direto, que funcione em 7 dias.</p>
                         </div>
                     </div>
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
-                            <p><strong>Quer organizar as finanças do casal ou da família</strong> — Precisa de um método que funcione para mais de uma pessoa.</p>
+                            <p><strong>Quer organizar as finanças do casal</strong> — Precisa de um método que funcione para mais de uma pessoa.</p>
                         </div>
                     </div>
                     <div class="audience-item">
-                        <div class="audience-icon" aria-hidden="true">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                        </div>
+                        <div class="audience-dot"></div>
                         <div>
-                            <p><strong>Ganha bem, mas nunca sobra nada</strong> — O problema não é a renda, é a falta de estratégia com o dinheiro.</p>
+                            <p><strong>Ganha bem, mas nunca sobra nada</strong> — O problema não é a renda, é a falta de estratégia.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="social-proof" aria-label="Depoimentos de alunos">
+        <div class="section-divider"></div>
+
+        <!-- ==================== DEPOIMENTOS ==================== -->
+        <section class="section section-center" aria-label="Depoimentos de alunos">
             <div class="container">
-                <h2 class="section-title">O QUE DIZEM NOSSOS ALUNOS</h2>
+                <span class="section-label">RESULTADOS</span>
+                <h2 class="section-title">O que dizem nossos alunos</h2>
                 <p class="section-subtitle">Pessoas reais que transformaram suas finanças com o método.</p>
 
                 <div class="testimonials-grid">
                     <div class="testimonial">
-                        <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         <p>Em 4 dias eu já tinha cortado R$ 380 em assinaturas que nem lembrava que pagava. O método é simples e direto, sem enrolação.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">RM</div>
@@ -744,7 +720,7 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
                         </div>
                     </div>
                     <div class="testimonial">
-                        <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         <p>Eu e minha esposa fizemos juntos. Pela primeira vez conseguimos fechar o mês no positivo. Os scripts de renegociação são ouro puro.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">CF</div>
@@ -755,7 +731,7 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
                         </div>
                     </div>
                     <div class="testimonial">
-                        <div class="stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                         <p>Já tentei vários cursos caros e nenhum foi tão prático. Em 7 dias eu tinha um plano claro. Reduzi R$ 1.200 em dívidas no primeiro mês.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">AP</div>
@@ -784,30 +760,40 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
             </div>
         </section>
 
-        <section class="bonus" aria-label="Bônus inclusos">
+        <div class="section-divider"></div>
+
+        <!-- ==================== BÔNUS ==================== -->
+        <section class="section section-center" aria-label="Bônus inclusos">
             <div class="container">
-                <h2 class="section-title">BÔNUS EXCLUSIVOS</h2>
+                <span class="section-label">EXTRAS</span>
+                <h2 class="section-title">Bônus Exclusivos</h2>
                 <p class="section-subtitle">Além do método completo, você recebe ferramentas prontas para usar imediatamente.</p>
+
                 <div class="bonus-grid">
                     <div class="bonus-card">
+                        <span class="bonus-tag">BÔNUS 1</span>
                         <h3>Planilha Automática</h3>
-                        <p style="font-size: 0.9rem; margin-top: 10px;">Compatível com Google Sheets/Excel. Simples e direta.</p>
+                        <p>Compatível com Google Sheets e Excel. Simples, visual e com fórmulas automáticas para você acompanhar sua evolução.</p>
                     </div>
                     <div class="bonus-card">
+                        <span class="bonus-tag">BÔNUS 2</span>
                         <h3>12 Scripts Prontos</h3>
-                        <p style="font-size: 0.9rem; margin-top: 10px;">Para negociar dívida, pedir desconto e cancelar serviços.</p>
+                        <p>Copie e cole: scripts para negociar dívida com bancos, pedir desconto e cancelar serviços sem estresse.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="guarantee-section" aria-label="Garantia de satisfação">
+        <div class="section-divider"></div>
+
+        <!-- ==================== GARANTIA ==================== -->
+        <section class="section" aria-label="Garantia de satisfação">
             <div class="container">
                 <div class="guarantee-box">
                     <div class="guarantee-icon" aria-hidden="true">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <polyline points="9 12 11 14 15 10" stroke="#fff" stroke-width="2"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--success)"/>
+                            <polyline points="9 12 11 14 15 10" stroke="#fff" stroke-width="2.5" fill="none"/>
                         </svg>
                     </div>
                     <h3>GARANTIA INCONDICIONAL DE 7 DIAS</h3>
@@ -816,25 +802,36 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
             </div>
         </section>
 
-        <section id="oferta" class="cta-section" aria-label="Oferta de compra">
+        <div class="section-divider"></div>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <section id="oferta" class="cta-final" aria-label="Oferta de compra">
             <div class="container">
-                <h2 style="margin-bottom: 10px;">Acesso Completo</h2>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Método + Planilha + Scripts de Negociação + Garantia de 7 dias</p>
+                <span class="section-label">OFERTA</span>
+                <h2 class="section-title" style="margin-bottom: 8px;">Acesso Completo</h2>
+                <p class="section-subtitle" style="margin-bottom: 30px;">Método + Planilha + Scripts de Negociação + Garantia de 7 dias</p>
 
-                <div class="price-old">De R$ 97,00</div>
-                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 10px; font-family: 'Orbitron';">
-                    R$ 29,90
+                <div class="price-box">
+                    <div class="price-old">De R$ 97,00</div>
+                    <div class="price-current">R$ 29,90</div>
+                    <div class="price-note">Pagamento único — Acesso vitalício</div>
                 </div>
-                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem;">Pagamento único — Acesso vitalício</p>
 
-                <a href="https://pay.kiwify.com.br/9xaksdk" class="btn btn-pulse" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 29,90">COMPRAR AGORA</a>
-                <p style="color: var(--text-muted); margin-top: 15px; font-size: 0.8rem;">Aceitamos cartão, Pix e boleto</p>
+                <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 29,90">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    COMPRAR AGORA — R$ 29,90
+                </a>
+                <p class="sub-cta" style="margin-top: 16px;">Aceitamos cartão, Pix e boleto</p>
             </div>
         </section>
 
-        <section class="faq-section" aria-label="Perguntas frequentes">
+        <div class="section-divider"></div>
+
+        <!-- ==================== FAQ ==================== -->
+        <section class="section section-center" aria-label="Perguntas frequentes">
             <div class="container">
-                <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+                <span class="section-label">DÚVIDAS</span>
+                <h2 class="section-title">Perguntas Frequentes</h2>
                 <p class="section-subtitle">Tire suas dúvidas antes de ativar o seu Gatilho Financeiro.</p>
 
                 <div class="faq-list">
@@ -843,109 +840,79 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
                             <span>O método funciona para quem ganha pouco?</span>
                             <span class="faq-arrow" aria-hidden="true">&#9660;</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Sim! O foco é organizar o que você já tem, não exigir que ganhe mais.</p>
-                        </div>
+                        <div class="faq-answer"><p>Sim! O foco é organizar o que você já tem, não exigir que ganhe mais.</p></div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Preciso de algum conhecimento prévio?</span>
                             <span class="faq-arrow" aria-hidden="true">&#9660;</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Não. O método é 100% do zero, explicado passo a passo.</p>
-                        </div>
+                        <div class="faq-answer"><p>Não. O método é 100% do zero, explicado passo a passo.</p></div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Como recebo o material?</span>
                             <span class="faq-arrow" aria-hidden="true">&#9660;</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Após a confirmação do pagamento, você recebe acesso por e-mail ao material.</p>
-                        </div>
+                        <div class="faq-answer"><p>Após a confirmação do pagamento, você recebe acesso por e-mail ao ebook, planilha e todos os bônus.</p></div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>Posso compartilhar com minha família?</span>
                             <span class="faq-arrow" aria-hidden="true">&#9660;</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Sim! Recomendado para casais e famílias.</p>
-                        </div>
+                        <div class="faq-answer"><p>Sim! Recomendado para casais e famílias que querem se organizar juntos.</p></div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">
                             <span>E se eu não gostar?</span>
                             <span class="faq-arrow" aria-hidden="true">&#9660;</span>
                         </button>
-                        <div class="faq-answer">
-                            <p>Você tem 7 dias de garantia incondicional.</p>
-                        </div>
+                        <div class="faq-answer"><p>Você tem 7 dias de garantia incondicional. Devolvemos 100% sem perguntas.</p></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="certifications">
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     <span>Site Seguro</span>
                 </div>
-
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     <span>Dados Protegidos</span>
                 </div>
-
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     <span>Compra Garantida</span>
                 </div>
-
                 <div class="cert-item">
-                    <svg class="cert-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                        <line x1="1" y1="10" x2="23" y2="10"></line>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
                     <span>Pagamento 100% Seguro</span>
                 </div>
             </div>
-
             <p class="footer-text">
-                &copy; 2025 Gatilho Financeiro. Todos os direitos reservados.<br>
+                &copy; 2026 Gatilho Financeiro. Todos os direitos reservados.<br>
                 Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho não deve ser considerada média.
             </p>
         </div>
     </footer>
 
     <script>
-        // FAQ
+        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(function(button) {
             button.addEventListener('click', function() {
                 var item = this.parentElement;
                 var isActive = item.classList.contains('active');
-
                 document.querySelectorAll('.faq-item').forEach(function(el) {
                     el.classList.remove('active');
                     el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                 });
-
                 if (!isActive) {
                     item.classList.add('active');
                     this.setAttribute('aria-expanded', 'true');
@@ -953,26 +920,39 @@ src="https://www.facebook.com/tr?id=930152846239162&ev=PageView&noscript=1"
             });
         });
 
-        // ✅ ATIVAR SOM (Chrome)
+        // Ativar Som YouTube (Chrome Desktop)
         function ativarSom() {
-            const iframe = document.getElementById('yt-iframe');
-            const overlay = document.getElementById('startOverlay');
+            var iframe = document.getElementById('yt-iframe');
+            var overlay = document.getElementById('startOverlay');
             if (!iframe || !iframe.contentWindow) return;
-
-            const msg = (func, args=[]) => JSON.stringify({
-                event: "command",
-                func,
-                args
-            });
-
-            // unmute + volume + play
-            iframe.contentWindow.postMessage(msg("unMute"), "*");
-            iframe.contentWindow.postMessage(msg("setVolume", [100]), "*");
-            iframe.contentWindow.postMessage(msg("playVideo"), "*");
-
-            overlay.style.opacity = "0";
-            setTimeout(() => { overlay.style.display = "none"; }, 250);
+            var msg = function(func, args) {
+                return JSON.stringify({ event: 'command', func: func, args: args || [] });
+            };
+            iframe.contentWindow.postMessage(msg('unMute'), '*');
+            iframe.contentWindow.postMessage(msg('setVolume', [100]), '*');
+            iframe.contentWindow.postMessage(msg('playVideo'), '*');
+            overlay.style.opacity = '0';
+            setTimeout(function() { overlay.style.display = 'none'; }, 300);
         }
+
+        // Intersection Observer — fade-in sections
+        (function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.feature-card, .audience-item, .testimonial, .bonus-card, .guarantee-box').forEach(function(el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        })();
     </script>
 </body>
 </html>
