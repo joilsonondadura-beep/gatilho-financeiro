@@ -407,6 +407,144 @@
         .bonus-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
         .bonus-card p { font-size: .9rem; color: var(--text-secondary); line-height: 1.6; }
 
+        /* ---- App Mockup (Bonus 3) ---- */
+        .bonus-app {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 48px; align-items: center;
+            margin-top: 48px;
+            background: linear-gradient(135deg, rgba(108,92,231,.06), rgba(0,207,253,.04));
+            border: 1px solid rgba(108,92,231,.15);
+            border-radius: var(--radius-xl); padding: 48px;
+        }
+        .bonus-app-text h3 {
+            font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;
+        }
+        .bonus-app-text p {
+            font-size: .93rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;
+        }
+        .app-features-list {
+            list-style: none; padding: 0;
+        }
+        .app-features-list li {
+            display: flex; align-items: center; gap: 10px;
+            font-size: .9rem; color: var(--text-secondary);
+            padding: 6px 0;
+        }
+        .app-features-list li svg {
+            width: 18px; height: 18px; flex-shrink: 0;
+        }
+
+        /* Browser Mockup */
+        .app-mockup { perspective: 1000px; }
+        .mockup-browser {
+            background: var(--bg-surface); border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 40px rgba(108,92,231,.1);
+            transform: rotateY(-3deg) rotateX(2deg);
+            transition: transform .4s;
+        }
+        .mockup-browser:hover { transform: rotateY(0) rotateX(0); }
+        .mockup-topbar {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 16px;
+            background: var(--bg-deep); border-bottom: 1px solid var(--border);
+        }
+        .mockup-dots { display: flex; gap: 6px; }
+        .mockup-dots span {
+            width: 10px; height: 10px; border-radius: 50%;
+        }
+        .mockup-dots span:nth-child(1) { background: #FF5F57; }
+        .mockup-dots span:nth-child(2) { background: #FFBD2E; }
+        .mockup-dots span:nth-child(3) { background: #28CA41; }
+        .mockup-url {
+            flex: 1; text-align: center;
+            font-size: .7rem; color: var(--text-muted);
+            background: rgba(255,255,255,.04); padding: 4px 12px;
+            border-radius: 6px;
+        }
+        .mockup-content {
+            display: flex; min-height: 260px;
+        }
+        .mockup-sidebar {
+            width: 120px; flex-shrink: 0;
+            background: rgba(255,255,255,.02);
+            border-right: 1px solid var(--border);
+            padding: 12px 8px;
+        }
+        .mockup-logo-mini {
+            display: flex; align-items: center; gap: 6px;
+            margin-bottom: 16px; padding: 4px;
+        }
+        .mockup-logo-icon {
+            width: 18px; height: 18px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 4px;
+        }
+        .mockup-logo-mini span {
+            font-size: .6rem; font-weight: 700; color: var(--text-primary);
+        }
+        .mockup-nav-item {
+            font-size: .6rem; color: var(--text-muted);
+            padding: 6px 8px; border-radius: 6px;
+            margin-bottom: 2px;
+        }
+        .mockup-nav-item.active {
+            background: rgba(108,92,231,.15); color: var(--accent); font-weight: 600;
+        }
+        .mockup-main {
+            flex: 1; padding: 14px;
+        }
+        .mockup-header-row {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 12px;
+        }
+        .mockup-greeting { font-size: .7rem; font-weight: 600; }
+        .mockup-plan-badge {
+            font-size: .55rem; font-weight: 700;
+            background: rgba(108,92,231,.2); color: var(--accent);
+            padding: 2px 8px; border-radius: 10px;
+        }
+        .mockup-cards-row {
+            display: flex; gap: 8px; margin-bottom: 14px;
+        }
+        .mockup-stat-card {
+            flex: 1; background: rgba(255,255,255,.03);
+            border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px; text-align: center;
+        }
+        .mockup-stat-label { font-size: .5rem; color: var(--text-muted); margin-bottom: 2px; }
+        .mockup-stat-value { font-size: .75rem; font-weight: 800; }
+        .mockup-stat-value.green { color: var(--success); }
+        .mockup-stat-value.red { color: var(--danger); }
+        .mockup-stat-value.purple { color: var(--accent); }
+        .mockup-chart {
+            background: rgba(255,255,255,.02);
+            border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px;
+        }
+        .mockup-chart-title { font-size: .55rem; color: var(--text-muted); margin-bottom: 10px; }
+        .mockup-bars {
+            display: flex; align-items: flex-end; gap: 6px; height: 60px;
+        }
+        .mockup-bar {
+            flex: 1; border-radius: 3px 3px 0 0;
+            background: rgba(108,92,231,.3);
+            transition: background .3s;
+        }
+        .mockup-bar.active {
+            background: linear-gradient(to top, var(--accent), var(--accent-2));
+        }
+
+        @media (max-width: 768px) {
+            .bonus-app {
+                grid-template-columns: 1fr;
+                padding: 28px 20px;
+            }
+            .mockup-browser { transform: none; }
+        }
+
         /* ---- Guarantee ---- */
         .guarantee-box {
             max-width: 700px; margin: 0 auto;
@@ -781,6 +919,89 @@
                         <p>Copie e cole: scripts para negociar dívida com bancos, pedir desconto e cancelar serviços sem estresse.</p>
                     </div>
                 </div>
+
+                <!-- Bônus 3 — App Preview -->
+                <div class="bonus-app">
+                    <div class="bonus-app-text">
+                        <span class="bonus-tag">BÔNUS 3 — EXCLUSIVO</span>
+                        <h3>Acesso Trial ao App Gatilho Financeiro</h3>
+                        <p>Teste grátis o nosso aplicativo web completo de controle financeiro. Importe extratos bancários, acompanhe suas dívidas, receba insights com inteligência artificial e muito mais.</p>
+                        <ul class="app-features-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Dashboard com score financeiro
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Importação de extratos (CSV, OFX, TXT)
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Coach financeiro com Inteligência Artificial
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Gestão de dívidas e metas semanais
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Suporte a 16+ bancos brasileiros
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="app-mockup">
+                        <div class="mockup-browser">
+                            <div class="mockup-topbar">
+                                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                <div class="mockup-url">gatilho-financeiro-app.vercel.app</div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mockup-sidebar">
+                                    <div class="mockup-logo-mini">
+                                        <div class="mockup-logo-icon"></div>
+                                        <span>Gatilho</span>
+                                    </div>
+                                    <div class="mockup-nav-item active">Dashboard</div>
+                                    <div class="mockup-nav-item">Lançamentos</div>
+                                    <div class="mockup-nav-item">Dívidas</div>
+                                    <div class="mockup-nav-item">Importar</div>
+                                    <div class="mockup-nav-item">Coach IA</div>
+                                </div>
+                                <div class="mockup-main">
+                                    <div class="mockup-header-row">
+                                        <span class="mockup-greeting">Olá, usuário!</span>
+                                        <span class="mockup-plan-badge">TRIAL</span>
+                                    </div>
+                                    <div class="mockup-cards-row">
+                                        <div class="mockup-stat-card">
+                                            <div class="mockup-stat-label">Receita</div>
+                                            <div class="mockup-stat-value green">R$ 4.200</div>
+                                        </div>
+                                        <div class="mockup-stat-card">
+                                            <div class="mockup-stat-label">Despesas</div>
+                                            <div class="mockup-stat-value red">R$ 2.870</div>
+                                        </div>
+                                        <div class="mockup-stat-card">
+                                            <div class="mockup-stat-label">Score</div>
+                                            <div class="mockup-stat-value purple">85</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-chart">
+                                        <div class="mockup-chart-title">Evolução Mensal</div>
+                                        <div class="mockup-bars">
+                                            <div class="mockup-bar" style="height:40%"></div>
+                                            <div class="mockup-bar" style="height:55%"></div>
+                                            <div class="mockup-bar" style="height:45%"></div>
+                                            <div class="mockup-bar" style="height:70%"></div>
+                                            <div class="mockup-bar" style="height:60%"></div>
+                                            <div class="mockup-bar active" style="height:85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -809,7 +1030,7 @@
             <div class="container">
                 <span class="section-label">OFERTA</span>
                 <h2 class="section-title" style="margin-bottom: 8px;">Acesso Completo</h2>
-                <p class="section-subtitle" style="margin-bottom: 30px;">Método + Planilha + Scripts de Negociação + Garantia de 7 dias</p>
+                <p class="section-subtitle" style="margin-bottom: 30px; margin-left: auto; margin-right: auto;">Método + Planilha + Scripts de Negociação + Garantia de 7 dias</p>
 
                 <div class="price-box">
                     <div class="price-old">De R$ 97,00</div>
@@ -946,7 +1167,7 @@
                 });
             }, { threshold: 0.1 });
 
-            document.querySelectorAll('.feature-card, .audience-item, .testimonial, .bonus-card, .guarantee-box').forEach(function(el) {
+            document.querySelectorAll('.feature-card, .audience-item, .testimonial, .bonus-card, .guarantee-box, .bonus-app').forEach(function(el) {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
