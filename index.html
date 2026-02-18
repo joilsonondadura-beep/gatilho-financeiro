@@ -765,6 +765,201 @@
         }
         .people-viewing .eye-icon { font-size: .85rem; }
 
+        /* ---- Exit Intent Popup ---- */
+        .exit-overlay {
+            position: fixed; inset: 0; z-index: 10000;
+            background: rgba(0,0,0,.75);
+            backdrop-filter: blur(8px);
+            display: none; justify-content: center; align-items: center;
+            opacity: 0; transition: opacity .3s;
+        }
+        .exit-overlay.show { display: flex; opacity: 1; }
+        .exit-popup {
+            background: var(--bg-surface);
+            border: 2px solid var(--accent);
+            border-radius: var(--radius-xl);
+            padding: 48px 40px; max-width: 480px; width: 90%;
+            text-align: center; position: relative;
+            box-shadow: 0 0 80px var(--accent-glow), 0 40px 80px rgba(0,0,0,.6);
+            animation: popupEnter .4s cubic-bezier(.68,-.55,.27,1.55);
+        }
+        @keyframes popupEnter {
+            from { transform: scale(.8) translateY(30px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .exit-popup .exit-close {
+            position: absolute; top: 14px; right: 18px;
+            background: none; border: none; color: var(--text-muted);
+            font-size: 1.5rem; cursor: pointer; line-height: 1;
+            transition: color .2s;
+        }
+        .exit-popup .exit-close:hover { color: var(--text-primary); }
+        .exit-popup .exit-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+        .exit-popup h3 {
+            font-size: 1.4rem; font-weight: 800; margin-bottom: 12px;
+            color: var(--text-primary); line-height: 1.2;
+        }
+        .exit-popup h3 .exit-highlight { color: var(--danger); }
+        .exit-popup p {
+            color: var(--text-secondary); font-size: .95rem;
+            line-height: 1.6; margin-bottom: 24px;
+        }
+        .exit-popup .btn-cta { font-size: 1rem; padding: 16px 36px; width: 100%; justify-content: center; }
+        .exit-popup .exit-no {
+            display: block; margin-top: 12px;
+            background: none; border: none; color: var(--text-muted);
+            font-size: .78rem; cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            text-decoration: underline;
+        }
+
+        /* ---- Before/After Section ---- */
+        .before-after {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 24px; max-width: 800px; margin: 0 auto;
+        }
+        .ba-card {
+            border-radius: var(--radius-lg); padding: 32px;
+            position: relative;
+        }
+        .ba-card.before {
+            background: rgba(255,82,82,.05);
+            border: 1px solid rgba(255,82,82,.15);
+        }
+        .ba-card.after {
+            background: rgba(0,230,118,.05);
+            border: 1px solid rgba(0,230,118,.15);
+        }
+        .ba-card .ba-label {
+            display: inline-block; font-size: .7rem; font-weight: 800;
+            padding: 3px 12px; border-radius: 20px;
+            margin-bottom: 16px; letter-spacing: 1px;
+        }
+        .ba-card.before .ba-label { background: rgba(255,82,82,.12); color: var(--danger); }
+        .ba-card.after .ba-label { background: rgba(0,230,118,.12); color: var(--success); }
+        .ba-card ul {
+            list-style: none; padding: 0;
+        }
+        .ba-card ul li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: .9rem; color: var(--text-secondary);
+            padding: 8px 0; line-height: 1.5;
+        }
+        .ba-card ul li .ba-icon { flex-shrink: 0; font-size: 1rem; }
+        .ba-arrow {
+            display: none; align-items: center; justify-content: center;
+            font-size: 2rem; color: var(--accent);
+        }
+
+        /* ---- Cost of Inaction ---- */
+        .cost-inaction {
+            max-width: 700px; margin: 0 auto;
+            background: rgba(255,82,82,.04);
+            border: 1px solid rgba(255,82,82,.12);
+            border-radius: var(--radius-xl); padding: 40px;
+            text-align: center;
+        }
+        .cost-inaction .cost-title {
+            font-size: 1.15rem; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        .cost-items {
+            display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .cost-item {
+            text-align: center; flex: 1; min-width: 120px;
+        }
+        .cost-item .cost-val {
+            font-size: 1.8rem; font-weight: 800; color: var(--danger);
+            display: block;
+        }
+        .cost-item .cost-desc {
+            font-size: .75rem; color: var(--text-muted); margin-top: 4px;
+        }
+        .cost-inaction .cost-contrast {
+            font-size: .95rem; color: var(--text-secondary);
+            margin-top: 16px; line-height: 1.6;
+        }
+        .cost-inaction .cost-contrast strong { color: var(--success); font-weight: 800; }
+
+        /* ---- Progress Bar ---- */
+        .progress-bar {
+            position: fixed; top: 0; left: 0;
+            height: 3px; z-index: 9999;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            width: 0%; transition: width .15s linear;
+            pointer-events: none;
+        }
+
+        /* ---- WhatsApp Float ---- */
+        .whatsapp-float {
+            position: fixed; bottom: 90px; right: 20px;
+            z-index: 997;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25D366;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,.4);
+            transition: transform .3s, box-shadow .3s;
+            text-decoration: none;
+            animation: whatsappBounce 3s ease-in-out infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,.5);
+        }
+        .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+        .whatsapp-float .wpp-tooltip {
+            position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: .75rem; font-weight: 600;
+            padding: 8px 14px; border-radius: var(--radius-sm);
+            white-space: nowrap;
+            border: 1px solid var(--border);
+            opacity: 0; pointer-events: none;
+            transition: opacity .3s;
+        }
+        .whatsapp-float:hover .wpp-tooltip { opacity: 1; }
+        @keyframes whatsappBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* ---- Desktop Sticky CTA ---- */
+        .sticky-cta-desktop {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            z-index: 998;
+            background: rgba(10,10,15,.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 10px 24px;
+            display: flex; align-items: center; justify-content: center; gap: 24px;
+            transform: translateY(100%);
+            transition: transform .4s ease;
+        }
+        .sticky-cta-desktop.visible { transform: translateY(0); }
+        .sticky-cta-desktop .sticky-info {
+            font-size: .85rem; color: var(--text-secondary);
+        }
+        .sticky-cta-desktop .sticky-info strong { color: var(--text-primary); }
+        .sticky-cta-desktop .sticky-info .sticky-price {
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--success);
+        }
+        .sticky-cta-desktop .sticky-info .sticky-old-price {
+            color: var(--text-muted); text-decoration: line-through;
+            font-size: .8rem; margin-right: 6px;
+        }
+        .sticky-cta-desktop .btn-cta {
+            padding: 12px 32px; font-size: .9rem;
+            animation: none;
+        }
+
+        /* ---- Animated Counter ---- */
+        .counter-animate {
+            transition: all .3s;
+        }
+
         /* ---- Responsive ---- */
         @media (max-width: 768px) {
             .hero { padding-top: 140px; padding-bottom: 60px; min-height: auto; }
@@ -780,6 +975,16 @@
             .price-current { font-size: 2.8rem; }
             .certifications { gap: 16px; }
             .sticky-cta { display: block; }
+            .sticky-cta-desktop { display: none !important; }
+            .whatsapp-float { bottom: 80px; right: 14px; width: 48px; height: 48px; }
+            .whatsapp-float svg { width: 24px; height: 24px; }
+            .whatsapp-float .wpp-tooltip { display: none; }
+            .before-after { grid-template-columns: 1fr; }
+            .ba-card { padding: 24px; }
+            .cost-items { gap: 16px; }
+            .cost-item .cost-val { font-size: 1.4rem; }
+            .exit-popup { padding: 32px 24px; }
+            .exit-popup h3 { font-size: 1.2rem; }
             .impact-strip { gap: 12px; }
             .impact-card { min-width: 140px; padding: 14px 10px; }
             .impact-value { font-size: 1.3rem; }
@@ -913,6 +1118,42 @@
             <div class="people-viewing">
                 <span class="eye-icon">&#128065;</span>
                 <span id="viewingCount">47</span> pessoas estão vendo esta oferta agora
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== ANTES vs DEPOIS ==================== -->
+        <section class="section section-center" aria-label="Antes e depois">
+            <div class="container">
+                <span class="section-label">&#128260; TRANSFORMAÇÃO</span>
+                <h2 class="section-title">De caos financeiro para controle total</h2>
+                <p class="section-subtitle">Veja a diferença entre quem aplica o método e quem continua no piloto automático.</p>
+
+                <div class="before-after">
+                    <div class="ba-card before">
+                        <span class="ba-label">&#10060; ANTES DO GATILHO</span>
+                        <ul>
+                            <li><span class="ba-icon">&#128308;</span> Salário acaba antes do dia 15</li>
+                            <li><span class="ba-icon">&#128308;</span> Não sabe quanto gasta por mês</li>
+                            <li><span class="ba-icon">&#128308;</span> Paga mínimo do cartão todo mês</li>
+                            <li><span class="ba-icon">&#128308;</span> Assina coisas que esqueceu</li>
+                            <li><span class="ba-icon">&#128308;</span> Ansiedade ao abrir app do banco</li>
+                            <li><span class="ba-icon">&#128308;</span> Briga com cônjuge por dinheiro</li>
+                        </ul>
+                    </div>
+                    <div class="ba-card after">
+                        <span class="ba-label">&#9989; DEPOIS DO GATILHO</span>
+                        <ul>
+                            <li><span class="ba-icon">&#128994;</span> Sabe exatamente pra onde cada real vai</li>
+                            <li><span class="ba-icon">&#128994;</span> Cortou gastos invisíveis (média R$ 380)</li>
+                            <li><span class="ba-icon">&#128994;</span> Negociou e reduziu juros do cartão</li>
+                            <li><span class="ba-icon">&#128994;</span> Fecha o mês no positivo</li>
+                            <li><span class="ba-icon">&#128994;</span> Dorme tranquilo sem pensar em conta</li>
+                            <li><span class="ba-icon">&#128994;</span> Casal alinhado com plano financeiro</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1153,6 +1394,35 @@
 
         <div class="section-divider"></div>
 
+        <!-- ==================== CUSTO DA INAÇÃO ==================== -->
+        <section class="section section-center" aria-label="Custo de não agir">
+            <div class="container">
+                <div class="cost-inaction">
+                    <div class="cost-title">&#128680; Quanto custa NÃO resolver isso?</div>
+                    <div class="cost-items">
+                        <div class="cost-item">
+                            <span class="cost-val">R$ 456</span>
+                            <span class="cost-desc">Juros do cartão<br>por mês (média BR)</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-val">R$ 5.472</span>
+                            <span class="cost-desc">Dinheiro jogado fora<br>em 1 ano de juros</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-val">&#8734;</span>
+                            <span class="cost-desc">Noites de sono<br>perdidas por ansiedade</span>
+                        </div>
+                    </div>
+                    <div class="cost-contrast">
+                        Resolver tudo isso custa <strong>R$ 29,90. Uma única vez.</strong><br>
+                        O preço de <strong>não agir</strong> é muito mais caro.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <!-- ==================== GARANTIA ==================== -->
         <section class="section" aria-label="Garantia de satisfação">
             <div class="container">
@@ -1315,6 +1585,41 @@
             &#128293; QUERO SAIR DO VERMELHO — R$ 29,90
         </a>
         <div class="sticky-sub">&#128274; Pagamento seguro &#8226; Garantia 7 dias &#8226; Acesso imediato</div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5547997623673?text=Oi!%20Tenho%20d%C3%BAvidas%20sobre%20o%20Gatilho%20Financeiro" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="wpp-tooltip">Tem dúvidas? Fale conosco</span>
+    </a>
+
+    <!-- Desktop Sticky CTA -->
+    <div class="sticky-cta-desktop" id="stickyDesktop">
+        <div class="sticky-info">
+            <span class="sticky-old-price">R$ 297</span>
+            <span class="sticky-price">R$ 29,90</span>
+            <span style="margin-left: 8px; font-size: .78rem; color: var(--text-muted);">&#8226; Acesso vitalício &#8226; Garantia 7 dias</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
+            QUERO SAIR DO VERMELHO
+        </a>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div class="exit-overlay" id="exitPopup">
+        <div class="exit-popup">
+            <button class="exit-close" id="exitClose" aria-label="Fechar">&#10005;</button>
+            <span class="exit-emoji">&#9888;&#65039;</span>
+            <h3>Espera! Você vai sair <span class="exit-highlight">sem resolver suas finanças?</span></h3>
+            <p>2.500+ pessoas já saíram do vermelho com esse método.<br>Custa menos que um lanche e tem garantia de 7 dias.<br><strong>Se não funcionar, devolvemos seu dinheiro.</strong></p>
+            <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
+                &#128293; ÚLTIMA CHANCE — R$ 29,90
+            </a>
+            <button class="exit-no" id="exitNo">Não, prefiro continuar no vermelho</button>
+        </div>
     </div>
 
     <!-- Social Proof Toast -->
@@ -1481,20 +1786,161 @@
             });
         })();
 
+        // ===== Progress Bar =====
+        (function() {
+            var bar = document.getElementById('progressBar');
+            if (!bar) return;
+            window.addEventListener('scroll', function() {
+                var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                bar.style.width = Math.min(100, pct) + '%';
+            });
+        })();
+
+        // ===== Desktop Sticky CTA =====
+        (function() {
+            var sticky = document.getElementById('stickyDesktop');
+            if (!sticky) return;
+            // Only show on desktop (>768px)
+            if (window.innerWidth <= 768) return;
+            var shown = false;
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 800 && !shown) {
+                    sticky.classList.add('visible');
+                    shown = true;
+                } else if (window.scrollY <= 400 && shown) {
+                    sticky.classList.remove('visible');
+                    shown = false;
+                }
+            });
+        })();
+
+        // ===== Exit Intent Popup =====
+        (function() {
+            var popup = document.getElementById('exitPopup');
+            var closeBtn = document.getElementById('exitClose');
+            var noBtn = document.getElementById('exitNo');
+            if (!popup) return;
+            var shown = false;
+            var KEY = 'gf_exit_shown';
+
+            // Só mostra 1x por sessão
+            if (sessionStorage.getItem(KEY)) return;
+
+            function showPopup() {
+                if (shown) return;
+                shown = true;
+                sessionStorage.setItem(KEY, '1');
+                popup.classList.add('show');
+                if (typeof fbq === 'function') fbq('trackCustom', 'ExitIntent');
+            }
+
+            function hidePopup() {
+                popup.classList.remove('show');
+            }
+
+            // Desktop: mouse sai do viewport pelo topo
+            document.addEventListener('mouseout', function(e) {
+                if (e.clientY <= 0 && !shown) showPopup();
+            });
+
+            // Mobile: botão voltar (history back)
+            if (window.innerWidth <= 768) {
+                // Mostrar após 45s em mobile se não scrollou muito
+                setTimeout(function() {
+                    if (window.scrollY < 300 && !shown) showPopup();
+                }, 45000);
+            }
+
+            closeBtn.addEventListener('click', hidePopup);
+            noBtn.addEventListener('click', hidePopup);
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) hidePopup();
+            });
+        })();
+
+        // ===== Animated Counters =====
+        (function() {
+            function animateValue(el, start, end, duration, suffix) {
+                suffix = suffix || '';
+                var startTime = null;
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+                    var current = Math.floor(start + (end - start) * eased);
+                    el.textContent = current.toLocaleString('pt-BR') + suffix;
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }
+
+            var observed = false;
+            var statsSection = document.querySelector('.social-stats');
+            if (!statsSection) return;
+
+            var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting && !observed) {
+                    observed = true;
+                    var nums = statsSection.querySelectorAll('.stat-number');
+                    nums.forEach(function(el) {
+                        var text = el.textContent.trim();
+                        if (text.indexOf('2.500') > -1) animateValue(el, 0, 2500, 2000, '+');
+                        else if (text.indexOf('4.8') > -1) {
+                            // Special: animate to 4.8
+                            var s = null;
+                            function stepDecimal(ts) {
+                                if (!s) s = ts;
+                                var p = Math.min((ts - s) / 1500, 1);
+                                var e2 = 1 - Math.pow(1 - p, 3);
+                                el.textContent = (e2 * 4.8).toFixed(1) + '/5';
+                                if (p < 1) requestAnimationFrame(stepDecimal);
+                            }
+                            requestAnimationFrame(stepDecimal);
+                        }
+                        else if (text.indexOf('92') > -1) animateValue(el, 0, 92, 1800, '%');
+                    });
+                }
+            }, { threshold: 0.3 });
+            observer.observe(statsSection);
+        })();
+
         // ===== FB Pixel: Track scroll depth =====
         (function() {
             var tracked = {};
             window.addEventListener('scroll', function() {
                 var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (pct >= 25 && !tracked['25']) {
+                    tracked['25'] = true;
+                    if (typeof fbq === 'function') fbq('trackCustom', 'Scroll25');
+                }
                 if (pct >= 50 && !tracked['50']) {
                     tracked['50'] = true;
                     if (typeof fbq === 'function') fbq('trackCustom', 'Scroll50');
+                }
+                if (pct >= 75 && !tracked['75']) {
+                    tracked['75'] = true;
+                    if (typeof fbq === 'function') fbq('trackCustom', 'Scroll75');
                 }
                 if (pct >= 90 && !tracked['90']) {
                     tracked['90'] = true;
                     if (typeof fbq === 'function') fbq('trackCustom', 'Scroll90');
                 }
             });
+        })();
+
+        // ===== Time on Page tracking (para otimização de ads) =====
+        (function() {
+            var milestones = [30, 60, 120];
+            var tracked = {};
+            setInterval(function() {
+                var seconds = Math.floor(performance.now() / 1000);
+                milestones.forEach(function(m) {
+                    if (seconds >= m && !tracked[m]) {
+                        tracked[m] = true;
+                        if (typeof fbq === 'function') fbq('trackCustom', 'TimeOnPage_' + m + 's');
+                    }
+                });
+            }, 5000);
         })();
     </script>
 </body>
