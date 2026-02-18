@@ -883,6 +883,181 @@
         }
         .cost-inaction .cost-contrast strong { color: var(--success); font-weight: 800; }
 
+        /* ---- Social Proof Gallery ---- */
+        .proof-gallery {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .proof-gallery-header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .proof-gallery-header .proof-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,230,118,.08);
+            border: 1px solid rgba(0,230,118,.2);
+            color: var(--success);
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .proof-gallery-header .proof-badge .verified-icon {
+            width: 14px; height: 14px;
+        }
+        .proof-scroll {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        .proof-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            cursor: pointer;
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+        }
+        .proof-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px rgba(108,92,231,.2);
+        }
+        .proof-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .proof-item .proof-zoom {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(0,0,0,.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .3s;
+            pointer-events: none;
+        }
+        .proof-item:hover .proof-zoom {
+            opacity: 1;
+        }
+        .proof-item .proof-zoom svg {
+            width: 16px;
+            height: 16px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2;
+        }
+        .proof-item .proof-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 14px;
+            background: linear-gradient(transparent, rgba(0,0,0,.85));
+            font-size: .72rem;
+            font-weight: 600;
+            color: rgba(255,255,255,.9);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .proof-label .proof-verified {
+            color: var(--success);
+            font-size: .85rem;
+        }
+
+        /* ---- Lightbox ---- */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 10000;
+            background: rgba(0,0,0,.92);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .3s;
+            padding: 20px;
+        }
+        .lightbox-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+            animation: lightboxZoom .35s cubic-bezier(.68,-.55,.27,1.55);
+        }
+        @keyframes lightboxZoom {
+            from { transform: scale(.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.15);
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+        .lightbox-close:hover {
+            background: rgba(255,255,255,.2);
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.15);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+        .lightbox-nav:hover { background: rgba(255,255,255,.2); }
+        .lightbox-nav.prev { left: 20px; }
+        .lightbox-nav.next { right: 20px; }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: .8rem;
+            color: rgba(255,255,255,.6);
+            font-weight: 500;
+        }
+
         /* ---- Progress Bar ---- */
         .progress-bar {
             position: fixed; top: 0; left: 0;
@@ -991,6 +1166,11 @@
             .toast-notification { bottom: 80px; left: 10px; right: 10px; max-width: none; }
             .pain-grid { grid-template-columns: 1fr; }
             .hero-social-proof { padding: 8px 16px; gap: 8px; }
+            .proof-scroll { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .proof-item .proof-label { font-size: .65rem; padding: 8px 10px; }
+            .lightbox-nav { width: 36px; height: 36px; font-size: 1rem; }
+            .lightbox-nav.prev { left: 10px; }
+            .lightbox-nav.next { right: 10px; }
         }
 
         @media (max-width: 480px) {
@@ -1001,6 +1181,7 @@
             .countdown-unit { padding: 8px 10px; min-width: 50px; }
             .countdown-number { font-size: 1.2rem; }
             .header-top-bar { font-size: .68rem; padding: 5px 10px; }
+            .proof-scroll { gap: 8px; }
         }
     </style>
 </head>
@@ -1344,6 +1525,79 @@
 
         <div class="section-divider"></div>
 
+        <!-- ==================== PROVAS SOCIAIS REAIS ==================== -->
+        <section class="section section-center" aria-label="Provas sociais reais">
+            <div class="container">
+                <span class="section-label">&#128248; PRINTS REAIS</span>
+                <h2 class="section-title">Olha o que nossos alunos estão dizendo</h2>
+                <p class="section-subtitle">Prints reais de quem aplicou o método. Sem edição, sem filtro.</p>
+
+                <div class="proof-gallery">
+                    <div class="proof-gallery-header">
+                        <span class="proof-badge">
+                            <svg class="verified-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            DEPOIMENTOS VERIFICADOS
+                        </span>
+                    </div>
+
+                    <div class="proof-scroll">
+                        <div class="proof-item" onclick="openLightbox(0)">
+                            <img src="Prova social 1.png" alt="Depoimento real de aluno do Gatilho Financeiro" loading="lazy">
+                            <div class="proof-zoom">
+                                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                            <div class="proof-label">
+                                <span class="proof-verified">&#9989;</span>
+                                Depoimento verificado
+                            </div>
+                        </div>
+                        <div class="proof-item" onclick="openLightbox(1)">
+                            <img src="Prova social 2.png" alt="Resultado real de aluno do Gatilho Financeiro" loading="lazy">
+                            <div class="proof-zoom">
+                                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                            <div class="proof-label">
+                                <span class="proof-verified">&#9989;</span>
+                                Depoimento verificado
+                            </div>
+                        </div>
+                        <div class="proof-item" onclick="openLightbox(2)">
+                            <img src="Prova social 3.png" alt="Feedback real de aluno do Gatilho Financeiro" loading="lazy">
+                            <div class="proof-zoom">
+                                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                            <div class="proof-label">
+                                <span class="proof-verified">&#9989;</span>
+                                Depoimento verificado
+                            </div>
+                        </div>
+                        <div class="proof-item" onclick="openLightbox(3)">
+                            <img src="Prova social 4.png" alt="Prova social real de aluno do Gatilho Financeiro" loading="lazy">
+                            <div class="proof-zoom">
+                                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                            <div class="proof-label">
+                                <span class="proof-verified">&#9989;</span>
+                                Depoimento verificado
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 32px;">
+                    <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
+                        QUERO O MESMO RESULTADO — R$ 29,90
+                    </a>
+                    <p class="sub-cta" style="margin-top: 12px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Risco zero &#8226; Garantia de 7 dias
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
         <!-- ==================== O QUE ESTÁ INCLUSO ==================== -->
         <section class="section section-center" aria-label="O que está incluso">
             <div class="container">
@@ -1622,6 +1876,15 @@
         </div>
     </div>
 
+    <!-- Lightbox for Social Proof -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&#10005;</button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Anterior">&#10094;</button>
+        <img id="lightboxImg" src="" alt="Prova social ampliada">
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Próximo">&#10095;</button>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 4</div>
+    </div>
+
     <!-- Social Proof Toast -->
     <div class="toast-notification" id="toastNotify">
         <div class="toast-avatar" id="toastAvatar">RM</div>
@@ -1632,6 +1895,80 @@
     </div>
 
     <script>
+        // ===== Lightbox for Social Proof =====
+        (function() {
+            var images = [
+                'Prova social 1.png',
+                'Prova social 2.png',
+                'Prova social 3.png',
+                'Prova social 4.png'
+            ];
+            var currentIndex = 0;
+            var overlay = document.getElementById('lightboxOverlay');
+            var img = document.getElementById('lightboxImg');
+            var counter = document.getElementById('lightboxCounter');
+            var closeBtn = document.getElementById('lightboxClose');
+            var prevBtn = document.getElementById('lightboxPrev');
+            var nextBtn = document.getElementById('lightboxNext');
+
+            if (!overlay) return;
+
+            window.openLightbox = function(index) {
+                currentIndex = index;
+                updateLightbox();
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            };
+
+            function updateLightbox() {
+                img.src = images[currentIndex];
+                counter.textContent = (currentIndex + 1) + ' / ' + images.length;
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closeLightbox();
+            });
+
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightbox();
+            });
+
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightbox();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (!overlay.classList.contains('show')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + images.length) % images.length; updateLightbox(); }
+                if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % images.length; updateLightbox(); }
+            });
+
+            // Swipe support for mobile
+            var touchStartX = 0;
+            overlay.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            overlay.addEventListener('touchend', function(e) {
+                var diff = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(diff) > 50) {
+                    if (diff < 0) { currentIndex = (currentIndex + 1) % images.length; }
+                    else { currentIndex = (currentIndex - 1 + images.length) % images.length; }
+                    updateLightbox();
+                }
+            }, { passive: true });
+        })();
+
         // ===== FAQ Accordion =====
         document.querySelectorAll('.faq-question').forEach(function(button) {
             button.addEventListener('click', function() {
