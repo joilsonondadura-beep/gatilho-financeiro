@@ -30,7 +30,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="product">
-    <meta property="og:title" content="Saia do Vermelho em 7 Dias — Por Apenas R$ 29,90">
+    <meta property="og:title" content="Saia do Vermelho em 7 Dias — Por Apenas R$ 97,00">
     <meta property="og:description" content="O método que já ajudou 2.500+ pessoas a retomar o controle financeiro. Planilha + Scripts + App incluso. Garantia de 7 dias.">
     <meta property="og:url" content="https://gatilhofinanceiro.vercel.app">
     <meta property="og:site_name" content="Gatilho Financeiro">
@@ -58,7 +58,7 @@
         "brand": { "@type": "Brand", "name": "Gatilho Financeiro" },
         "offers": {
             "@type": "Offer",
-            "price": "29.90",
+            "price": "97.00",
             "priceCurrency": "BRL",
             "availability": "https://schema.org/InStock"
         },
@@ -560,6 +560,348 @@
         .incluso-tag.green { background: var(--success); }
         .incluso-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
         .incluso-card p { font-size: .85rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* ---- App Card Destaque ---- */
+        .incluso-card-app {
+            background: linear-gradient(135deg, rgba(0,207,253,.06), rgba(108,92,231,.08));
+            border: 2px solid rgba(0,207,253,.35);
+            position: relative;
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 36px 32px;
+            animation: appCardGlow 3s ease-in-out infinite;
+        }
+        .incluso-card-app:hover {
+            border-color: var(--accent-2);
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px var(--accent-2-glow), 0 10px 40px rgba(0,0,0,.3);
+        }
+        .incluso-card-app h3 {
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .incluso-card-app .incluso-emoji {
+            font-size: 2.8rem;
+        }
+        .incluso-card-app .incluso-tag {
+            font-size: .75rem;
+            padding: 4px 12px;
+            animation: tagPulse 2s ease-in-out infinite;
+        }
+        @keyframes appCardGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0,207,253,.1); }
+            50% { box-shadow: 0 0 35px rgba(0,207,253,.2), 0 0 60px rgba(108,92,231,.1); }
+        }
+        @keyframes tagPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .8; box-shadow: 0 0 10px rgba(0,230,118,.3); }
+        }
+
+        /* ---- Hero Device Mockup ---- */
+        .hero-mockup {
+            width: 100%;
+            max-width: 800px;
+            margin: 48px auto 0;
+            position: relative;
+        }
+        .hero-mockup-inner {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,.08),
+                0 25px 80px rgba(0,0,0,.5),
+                0 0 60px var(--accent-glow);
+            background: var(--bg-card);
+        }
+        .hero-mockup-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: rgba(255,255,255,.04);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-mockup-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .hero-mockup-dot:nth-child(1) { background: #FF5F57; }
+        .hero-mockup-dot:nth-child(2) { background: #FFBD2E; }
+        .hero-mockup-dot:nth-child(3) { background: #28CA42; }
+        .hero-mockup-url {
+            flex: 1;
+            text-align: center;
+            font-size: .7rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,.04);
+            padding: 5px 16px;
+            border-radius: 6px;
+            margin: 0 40px;
+        }
+        .hero-mockup-img {
+            width: 100%;
+            display: block;
+        }
+        .hero-mockup-badge {
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid rgba(0,207,253,.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 700;
+            color: var(--accent-2);
+            white-space: nowrap;
+            box-shadow: 0 8px 30px rgba(0,0,0,.4);
+        }
+        .hero-mockup-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+            opacity: .5;
+        }
+
+        /* ---- App Showcase Section ---- */
+        .app-showcase {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-showcase::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0,207,253,.02) 30%, rgba(108,92,231,.03) 70%, transparent);
+            pointer-events: none;
+        }
+        .app-showcase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .app-showcase-text {
+            text-align: left;
+        }
+        .app-showcase-text .section-label {
+            display: inline-flex;
+        }
+        .app-showcase-text .section-title {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .app-showcase-text .section-subtitle {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .app-feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+        .app-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: .95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .app-feature-list li .feat-icon {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 8px;
+            background: rgba(0,207,253,.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+            margin-top: 1px;
+        }
+        .app-feature-list li strong {
+            color: var(--text-primary);
+        }
+
+        .app-showcase-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            width: 280px;
+            position: relative;
+            z-index: 2;
+        }
+        .phone-frame {
+            background: #1a1a2e;
+            border-radius: 36px;
+            padding: 12px;
+            box-shadow:
+                0 0 0 2px rgba(255,255,255,.08),
+                0 30px 80px rgba(0,0,0,.5),
+                0 0 50px var(--accent-2-glow);
+            position: relative;
+            overflow: hidden;
+        }
+        .phone-notch {
+            width: 120px;
+            height: 28px;
+            background: #1a1a2e;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        .phone-screen {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+        .phone-screen img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Floating secondary screens */
+        .float-screen {
+            position: absolute;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,.06),
+                0 15px 50px rgba(0,0,0,.5);
+            animation: floatScreen 6s ease-in-out infinite alternate;
+        }
+        .float-screen img {
+            width: 100%;
+            display: block;
+        }
+        .float-screen-1 {
+            width: 180px;
+            top: 10%;
+            left: -60px;
+            z-index: 1;
+        }
+        .float-screen-2 {
+            width: 180px;
+            bottom: 10%;
+            right: -60px;
+            z-index: 3;
+            animation-delay: -3s;
+        }
+        @keyframes floatScreen {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        /* Glow behind phone */
+        .phone-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-2-glow) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        /* Screenshot Gallery (gringa grid) */
+        .screenshot-gallery {
+            padding: 80px 0;
+        }
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .screenshot-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all .4s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+        }
+        .screenshot-card:hover {
+            border-color: var(--accent-2);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 30px var(--accent-2-glow);
+        }
+        .screenshot-card-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 14px;
+            background: rgba(255,255,255,.03);
+            border-bottom: 1px solid var(--border);
+        }
+        .screenshot-card-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .screenshot-card-dot:nth-child(1) { background: #FF5F57; }
+        .screenshot-card-dot:nth-child(2) { background: #FFBD2E; }
+        .screenshot-card-dot:nth-child(3) { background: #28CA42; }
+        .screenshot-card-title {
+            margin-left: auto;
+            font-size: .65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+        .screenshot-card img {
+            width: 100%;
+            display: block;
+        }
+        .screenshot-card-label {
+            padding: 14px 18px;
+            text-align: center;
+        }
+        .screenshot-card-label h4 {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        .screenshot-card-label p {
+            font-size: .78rem;
+            color: var(--text-muted);
+        }
 
         .total-value-box {
             margin-top: 40px; text-align: center;
@@ -1171,6 +1513,27 @@
             .lightbox-nav { width: 36px; height: 36px; font-size: 1rem; }
             .lightbox-nav.prev { left: 10px; }
             .lightbox-nav.next { right: 10px; }
+
+            /* Responsive: Hero Mockup */
+            .hero-mockup { margin-top: 32px; }
+            .hero-mockup-url { margin: 0 8px; }
+            .hero-mockup-badge { font-size: .7rem; padding: 8px 16px; bottom: -12px; }
+
+            /* Responsive: App Showcase */
+            .app-showcase-content { grid-template-columns: 1fr; gap: 40px; }
+            .app-showcase-text { text-align: center; }
+            .app-showcase-text .section-title { text-align: center; }
+            .app-showcase-text .section-subtitle { text-align: center; }
+            .app-feature-list li { text-align: left; }
+            .phone-mockup { width: 220px; }
+            .float-screen-1 { width: 130px; left: -20px; }
+            .float-screen-2 { width: 130px; right: -20px; }
+
+            /* Responsive: Screenshot Gallery */
+            .screenshots-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+            /* Responsive: Incluso App Card */
+            .incluso-card-app { max-width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -1182,6 +1545,13 @@
             .countdown-number { font-size: 1.2rem; }
             .header-top-bar { font-size: .68rem; padding: 5px 10px; }
             .proof-scroll { gap: 8px; }
+            .hero-mockup-badge { font-size: .62rem; padding: 6px 12px; }
+            .hero-mockup-bar { padding: 8px 10px; }
+            .phone-mockup { width: 200px; }
+            .float-screen-1 { width: 110px; left: -10px; top: 15%; }
+            .float-screen-2 { width: 110px; right: -10px; }
+            .app-showcase { padding: 60px 0; }
+            .screenshot-card-label h4 { font-size: .82rem; }
         }
     </style>
 </head>
@@ -1199,7 +1569,7 @@
     <!-- Header com barra de urgência -->
     <header>
         <div class="header-top-bar" id="topBar">
-            &#9888; OFERTA RELÂMPAGO: Preço sobe em <span id="topCountdown">--:--:--</span> — Garanta agora por R$ 29,90
+            &#9888; OFERTA RELÂMPAGO: Preço sobe em <span id="topCountdown">--:--:--</span> — Garanta agora por R$ 97,00
         </div>
         <div class="header-main">
             <a class="logo" href="#">
@@ -1257,6 +1627,23 @@
                 </div>
             </div>
 
+            <!-- Hero SaaS Mockup -->
+            <div class="hero-mockup">
+                <div class="hero-mockup-glow"></div>
+                <div class="hero-mockup-inner">
+                    <div class="hero-mockup-bar">
+                        <span class="hero-mockup-dot"></span>
+                        <span class="hero-mockup-dot"></span>
+                        <span class="hero-mockup-dot"></span>
+                        <span class="hero-mockup-url">&#128274; app.gatilhofinanceiro.com.br</span>
+                    </div>
+                    <img src="SAAS%201.PNG" alt="Dashboard do App Gatilho Financeiro" class="hero-mockup-img" loading="eager">
+                </div>
+                <div class="hero-mockup-badge">
+                    &#128640; Acesso incluso ao App — Dashboard + IA + 16 bancos
+                </div>
+            </div>
+
             <!-- Countdown -->
             <div class="countdown-wrapper">
                 <div class="countdown-label">&#128293; Preço promocional acaba em:</div>
@@ -1278,7 +1665,7 @@
 
             <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" aria-label="Quero sair do vermelho agora" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-                QUERO SAIR DO VERMELHO — R$ 29,90
+                QUERO SAIR DO VERMELHO — R$ 97,00
             </a>
 
             <div class="micro-guarantees">
@@ -1448,10 +1835,130 @@
             </div>
         </section>
 
+        <!-- ==================== APP SHOWCASE (GRINGA STYLE) ==================== -->
+        <section class="app-showcase section-center" aria-label="Conheça o App Gatilho">
+            <div class="container">
+                <div class="app-showcase-content">
+                    <div class="app-showcase-text">
+                        <span class="section-label">&#128241; APP EXCLUSIVO</span>
+                        <h2 class="section-title">Seu controle financeiro<br>no bolso. <span style="background: linear-gradient(135deg, var(--accent-2), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">24h por dia.</span></h2>
+                        <p class="section-subtitle">Além do método, você recebe acesso ao App Gatilho — uma plataforma completa para nunca mais perder o controle.</p>
+
+                        <ul class="app-feature-list">
+                            <li>
+                                <span class="feat-icon">&#128202;</span>
+                                <div><strong>Dashboard inteligente</strong> — Visão completa dos seus gastos em tempo real</div>
+                            </li>
+                            <li>
+                                <span class="feat-icon">&#129302;</span>
+                                <div><strong>Coach com IA</strong> — Receba dicas personalizadas baseadas no seu perfil</div>
+                            </li>
+                            <li>
+                                <span class="feat-icon">&#127975;</span>
+                                <div><strong>16+ bancos integrados</strong> — Importação automática de extratos</div>
+                            </li>
+                            <li>
+                                <span class="feat-icon">&#128200;</span>
+                                <div><strong>Metas e progresso</strong> — Acompanhe sua evolução dia a dia</div>
+                            </li>
+                        </ul>
+
+                        <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')" style="font-size: 1rem; padding: 16px 36px;">
+                            QUERO ACESSO AO APP
+                        </a>
+                    </div>
+
+                    <div class="app-showcase-visual">
+                        <div class="phone-glow"></div>
+                        <div class="float-screen float-screen-1">
+                            <img src="SAAS%203.PNG" alt="Tela de relatórios do App Gatilho" loading="lazy">
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen">
+                                    <img src="SAAS%205.PNG" alt="Dashboard principal do App Gatilho" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="float-screen float-screen-2">
+                            <img src="SAAS%204.PNG" alt="Tela de metas do App Gatilho" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== SCREENSHOTS GALLERY ==================== -->
+        <section class="screenshot-gallery section-center" aria-label="Capturas de tela do App">
+            <div class="container">
+                <span class="section-label">&#128248; DENTRO DO APP</span>
+                <h2 class="section-title">Veja o que você vai acessar</h2>
+                <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Prints reais do App Gatilho. Interface limpa, moderna e fácil de usar.</p>
+
+                <div class="screenshots-grid">
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-bar">
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-title">Dashboard</span>
+                        </div>
+                        <img src="SAAS%202.PNG" alt="Dashboard do App Gatilho" loading="lazy">
+                        <div class="screenshot-card-label">
+                            <h4>Visão geral das finanças</h4>
+                            <p>Tudo num só lugar — receitas, despesas e saldo</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-bar">
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-title">Relatórios</span>
+                        </div>
+                        <img src="SAAS%203.PNG" alt="Relatórios do App Gatilho" loading="lazy">
+                        <div class="screenshot-card-label">
+                            <h4>Relatórios detalhados</h4>
+                            <p>Gráficos claros sobre para onde vai seu dinheiro</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-bar">
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-title">Categorias</span>
+                        </div>
+                        <img src="SAAS%204.PNG" alt="Categorias do App Gatilho" loading="lazy">
+                        <div class="screenshot-card-label">
+                            <h4>Categorias inteligentes</h4>
+                            <p>Organização automática dos seus gastos</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <div class="screenshot-card-bar">
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-dot"></span>
+                            <span class="screenshot-card-title">Coach IA</span>
+                        </div>
+                        <img src="SAAS%205.PNG" alt="Coach IA do App Gatilho" loading="lazy">
+                        <div class="screenshot-card-label">
+                            <h4>Coach com Inteligência Artificial</h4>
+                            <p>Dicas personalizadas para seu perfil financeiro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ---- MID CTA ---- -->
         <div class="mid-cta">
             <div class="container">
-                <p class="mid-cta-text">Tudo isso por menos que uma pizza &#127829; — apenas <span class="price-inline">R$ 29,90</span></p>
+                <p class="mid-cta-text">Tudo isso por menos do que 1 mês de juros do cartão &#128176; — apenas <span class="price-inline">R$ 97,00</span></p>
                 <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
                     QUERO COMEÇAR AGORA
                 </a>
@@ -1495,7 +2002,7 @@
                     <div class="testimonial">
                         <div class="testimonial-result">&#128181; -R$ 1.200 em dívidas</div>
                         <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p>"Já comprei curso de R$ 500 que não serviu pra nada. Esse de R$ 29,90 mudou minha vida. Em 7 dias eu tinha um plano claro. No primeiro mês, eliminei R$ 1.200 em dívidas."</p>
+                        <p>"Já comprei curso de R$ 500 que não serviu pra nada. Esse de R$ 97 mudou minha vida. Em 7 dias eu tinha um plano claro. No primeiro mês, eliminei R$ 1.200 em dívidas."</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">AP</div>
                             <div>
@@ -1586,7 +2093,7 @@
 
                 <div style="text-align: center; margin-top: 32px;">
                     <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
-                        QUERO O MESMO RESULTADO — R$ 29,90
+                        QUERO O MESMO RESULTADO — R$ 97,00
                     </a>
                     <p class="sub-cta" style="margin-top: 12px;">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1602,46 +2109,54 @@
         <section class="section section-center" aria-label="O que está incluso">
             <div class="container">
                 <span class="section-label">&#127381; PACOTE COMPLETO</span>
-                <h2 class="section-title">Olha tudo que você leva por R$ 29,90</h2>
-                <p class="section-subtitle">Mais de R$ 297 em valor real. Você paga menos que um almoço.</p>
+                <h2 class="section-title">Olha tudo que você leva por R$ 97,00</h2>
+                <p class="section-subtitle">Mais de R$ 638 em valor real. Você paga menos do que seus juros de 1 mês.</p>
 
                 <div class="incluso-grid">
                     <div class="incluso-card">
-                        <span class="incluso-value">R$ 97</span>
+                        <span class="incluso-value">R$ 197</span>
                         <span class="incluso-emoji">&#128218;</span>
                         <span class="incluso-tag">PRINCIPAL</span>
                         <h3>Método Gatilho 7 Dias</h3>
                         <p>Ebook completo com o passo a passo para mapear, cortar e reorganizar suas finanças em uma semana.</p>
                     </div>
                     <div class="incluso-card">
-                        <span class="incluso-value">R$ 47</span>
+                        <span class="incluso-value">R$ 97</span>
                         <span class="incluso-emoji">&#128202;</span>
                         <span class="incluso-tag">BÔNUS 1</span>
                         <h3>Planilha Automática</h3>
                         <p>Google Sheets + Excel. Fórmulas prontas, visual limpo. Só preencher e acompanhar sua evolução.</p>
                     </div>
                     <div class="incluso-card">
-                        <span class="incluso-value">R$ 67</span>
+                        <span class="incluso-value">R$ 147</span>
                         <span class="incluso-emoji">&#128172;</span>
                         <span class="incluso-tag">BÔNUS 2</span>
                         <h3>12 Scripts de Negociação</h3>
                         <p>Copie e cole. Ligue pro banco, peça desconto, cancele serviços. Sem estresse, sem improviso.</p>
                     </div>
-                    <div class="incluso-card">
-                        <span class="incluso-value">R$ 87</span>
-                        <span class="incluso-emoji">&#128187;</span>
-                        <span class="incluso-tag green">BÔNUS 3 — EXCLUSIVO</span>
+                    <div class="incluso-card incluso-card-app">
+                        <span class="incluso-value">R$ 197</span>
+                        <span class="incluso-emoji">&#128241;</span>
+                        <span class="incluso-tag green">&#11088; DESTAQUE — EXCLUSIVO</span>
                         <h3>Acesso ao App Gatilho</h3>
-                        <p>Trial gratuito do nosso app web. Dashboard, importação de extratos, coach com IA e suporte a 16+ bancos.</p>
+                        <p>Trial gratuito do nosso app web. Dashboard completo, importação de extratos automática, coach com IA personalizado e suporte a 16+ bancos brasileiros. <strong>Seu controle financeiro no bolso, 24h por dia.</strong></p>
+                        <div style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,207,253,.15);">
+                            <div style="display:flex;align-items:center;gap:6px;padding:8px 12px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.06);">
+                                <span style="width:7px;height:7px;border-radius:50%;background:#FF5F57;"></span>
+                                <span style="width:7px;height:7px;border-radius:50%;background:#FFBD2E;"></span>
+                                <span style="width:7px;height:7px;border-radius:50%;background:#28CA42;"></span>
+                            </div>
+                            <img src="SAAS%202.PNG" alt="Preview do App Gatilho" loading="lazy" style="width:100%;display:block;">
+                        </div>
                     </div>
                 </div>
 
                 <div class="total-value-box">
                     <div class="tv-label">Valor total se vendido separado:</div>
-                    <div class="tv-old">R$ 298,00</div>
+                    <div class="tv-old">R$ 638,00</div>
                     <div class="tv-label">Hoje você leva TUDO por:</div>
-                    <div class="tv-new">R$ 29,90</div>
-                    <div class="tv-savings">&#128176; Você economiza R$ 268,10</div>
+                    <div class="tv-new">R$ 97,00</div>
+                    <div class="tv-savings">&#128176; Você economiza R$ 541,00</div>
                 </div>
             </div>
         </section>
@@ -1668,7 +2183,7 @@
                         </div>
                     </div>
                     <div class="cost-contrast">
-                        Resolver tudo isso custa <strong>R$ 29,90. Uma única vez.</strong><br>
+                        Resolver tudo isso custa <strong>R$ 97,00. Uma única vez.</strong><br>
                         O preço de <strong>não agir</strong> é muito mais caro.
                     </div>
                 </div>
@@ -1701,7 +2216,7 @@
             <div class="container">
                 <span class="section-label">&#128293; DECISÃO</span>
                 <h2 class="section-title" style="margin-bottom: 8px;">Você tem duas opções agora:</h2>
-                <p class="section-subtitle" style="margin-bottom: 30px; margin-left: auto; margin-right: auto;">Fechar essa página e continuar no vermelho... ou investir <strong>menos que um lanche</strong> e mudar de vida em 7 dias.</p>
+                <p class="section-subtitle" style="margin-bottom: 30px; margin-left: auto; margin-right: auto;">Fechar essa página e continuar no vermelho... ou investir <strong>menos do que 1 mês de juros</strong> e mudar de vida em 7 dias.</p>
 
                 <div class="urgency-final">
                     <span class="live-dot"></span>
@@ -1709,13 +2224,13 @@
                 </div>
 
                 <div class="price-box">
-                    <div class="price-old">De R$ 297,00</div>
-                    <div class="price-current">R$ 29,90</div>
+                    <div class="price-old">De R$ 497,00</div>
+                    <div class="price-current">R$ 97,00</div>
                     <div class="price-note">Pagamento único — Acesso vitalício</div>
-                    <div class="price-installment">ou <strong>3x de R$ 10,62</strong> no cartão</div>
+                    <div class="price-installment">ou <strong>3x de R$ 34,90</strong> no cartão</div>
                 </div>
 
-                <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 29,90" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
+                <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" aria-label="Comprar agora por R$ 97,00" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
                     SIM, QUERO MUDAR MINHA VIDA FINANCEIRA
                 </a>
@@ -1792,7 +2307,7 @@
         <!-- ---- ÚLTIMO CTA ---- -->
         <div class="mid-cta" style="padding-bottom: 80px;">
             <div class="container">
-                <p class="mid-cta-text">&#128680; Cada dia no vermelho custa mais caro que R$ 29,90</p>
+                <p class="mid-cta-text">&#128680; Cada dia no vermelho custa mais caro que R$ 97,00</p>
                 <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
                     QUERO SAIR DO VERMELHO AGORA
                 </a>
@@ -1836,7 +2351,7 @@
     <!-- Sticky CTA Mobile -->
     <div class="sticky-cta" id="stickyCta">
         <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
-            &#128293; QUERO SAIR DO VERMELHO — R$ 29,90
+            &#128293; QUERO SAIR DO VERMELHO — R$ 97,00
         </a>
         <div class="sticky-sub">&#128274; Pagamento seguro &#8226; Garantia 7 dias &#8226; Acesso imediato</div>
     </div>
@@ -1853,8 +2368,8 @@
     <!-- Desktop Sticky CTA -->
     <div class="sticky-cta-desktop" id="stickyDesktop">
         <div class="sticky-info">
-            <span class="sticky-old-price">R$ 297</span>
-            <span class="sticky-price">R$ 29,90</span>
+            <span class="sticky-old-price">R$ 497</span>
+            <span class="sticky-price">R$ 97,00</span>
             <span style="margin-left: 8px; font-size: .78rem; color: var(--text-muted);">&#8226; Acesso vitalício &#8226; Garantia 7 dias</span>
         </div>
         <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
@@ -1870,7 +2385,7 @@
             <h3>Espera! Você vai sair <span class="exit-highlight">sem resolver suas finanças?</span></h3>
             <p>2.500+ pessoas já saíram do vermelho com esse método.<br>Custa menos que um lanche e tem garantia de 7 dias.<br><strong>Se não funcionar, devolvemos seu dinheiro.</strong></p>
             <a href="https://pay.kiwify.com.br/9xaksdk" class="btn-cta" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">
-                &#128293; ÚLTIMA CHANCE — R$ 29,90
+                &#128293; ÚLTIMA CHANCE — R$ 97,00
             </a>
             <button class="exit-no" id="exitNo">Não, prefiro continuar no vermelho</button>
         </div>
